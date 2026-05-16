@@ -1,0 +1,24 @@
+@font-face {
+    font-family: 'VL Proxima Nova Rg';
+    src: url('VL-ProximaNova-Bold.eot');
+    src: url('VL-ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
+        url('VL-ProximaNova-Bold.woff2') format('woff2'),
+        url('VL-ProximaNova-Bold.woff') format('woff'),
+        url('VL-ProximaNova-Bold.svg#VL-ProximaNova-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'VL Proxima Nova Th';
+    src: url('VL-ProximaNovaT-Thin.eot');
+    src: url('VL-ProximaNovaT-Thin.eot?#iefix') format('embedded-opentype'),
+        url('VL-ProximaNovaT-Thin.woff2') format('woff2'),
+        url('VL-ProximaNovaT-Thin.woff') format('woff'),
+        url('VL-ProximaNovaT-Thin.svg#VL-ProximaNovaT-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+

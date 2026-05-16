@@ -1,0 +1,110 @@
+{
+    "packages": [
+        {
+            "name": "adbario/php-dot-notation",
+            "version": "3.3.0",
+            "version_normalized": "3.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/adbario/php-dot-notation.git",
+                "reference": "a94ce4493d19ea430baa8d7d210a2c9bd7129fc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/adbario/php-dot-notation/zipball/a94ce4493d19ea430baa8d7d210a2c9bd7129fc2",
+                "reference": "a94ce4493d19ea430baa8d7d210a2c9bd7129fc2",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "php": "^7.4 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.8",
+                "phpunit/phpunit": "^9.5",
+                "squizlabs/php_codesniffer": "^3.7"
+            },
+            "time": "2023-02-24T20:27:50+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Adbar\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Riku Särkinen",
+                    "email": "riku@adbar.io"
+                }
+            ],
+            "description": "PHP dot notation access to arrays",
+            "homepage": "https://github.com/adbario/php-dot-notation",
+            "keywords": [
+                "ArrayAccess",
+                "dotnotation"
+            ],
+            "support": {
+                "issues": "https://github.com/adbario/php-dot-notation/issues",
+                "source": "https://github.com/adbario/php-dot-notation/tree/3.3.0"
+            },
+            "install-path": "../adbario/php-dot-notation"
+        },
+        {
+            "name": "wordpressvn/wp-settings",
+            "version": "2.6.0",
+            "version_normalized": "2.6.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wordpressvn/wp-settings.git",
+                "reference": "2b688e9f199f0ed38088776be510fd99b1a3010b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wordpressvn/wp-settings/zipball/2b688e9f199f0ed38088776be510fd99b1a3010b",
+                "reference": "2b688e9f199f0ed38088776be510fd99b1a3010b",
+                "shasum": ""
+            },
+            "require": {
+                "adbario/php-dot-notation": "^3.3",
+                "php": "^8.0"
+            },
+            "time": "2025-11-21T10:45:19+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "WPVNTeam\\WPSettings\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "TienCOP",
+                    "email": "support@wordpressvn.com"
+                }
+            ],
+            "description": "Handy wrapper to make creating WordPress settings pages a breeze.",
+            "support": {
+                "issues": "https://github.com/wordpressvn/wp-settings/issues",
+                "source": "https://github.com/wordpressvn/wp-settings/tree/2.6.0"
+            },
+            "install-path": "../wordpressvn/wp-settings"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
