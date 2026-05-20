@@ -5,7 +5,6 @@
  * @package flatsome
  */
 
-global $flatsome_opt;
 global $domain;
 ?>
 

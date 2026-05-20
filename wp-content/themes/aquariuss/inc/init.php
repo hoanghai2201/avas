@@ -52,22 +52,13 @@ function custom_posts_per_page_by_category($query) {
         }
     }
     if($query->is_tax('luxury_category') && $query->is_main_query()){
-        $current_language = pll_current_language();
         $current_category = get_queried_object();
         if ($current_category) {
-            $category_id = pll_get_term($current_category->term_id, pll_current_language());
-            if(in_array($category_id, [137, 139])) { // Timeless Treasure
-                if (wp_is_mobile()) {
-                    $query->set('posts_per_page', 6);
-                } else {
-                    $query->set('posts_per_page', 9);
-                }
+            // Cả hai nhánh có cùng logic nên rút gọn lại
+            if (wp_is_mobile()) {
+                $query->set('posts_per_page', 6);
             } else {
-                if (wp_is_mobile()) {
-                    $query->set('posts_per_page', 6);
-                } else {
-                    $query->set('posts_per_page', 9);
-                }
+                $query->set('posts_per_page', 9);
             }
         }
     }
@@ -209,7 +200,7 @@ function custom_admin_css_for_specific_page() {
     $screen = get_current_screen();
     
     // Kiểm tra nếu đang ở trang chỉnh sửa post/page có ID 42
-    if (isset($_GET['post']) && in_array($_GET['post'], [41, 792]) == 42 && $screen->base == 'post') {
+    if (isset($_GET['post']) && in_array((int) $_GET['post'], [41, 792]) && $screen->base == 'post') {
         echo '<style>
         		.postarea {
         			display: none;
@@ -353,8 +344,9 @@ function display_sync_page($post_type) {
 
     // Nếu có form submit
     if (isset($_POST['sync_selected']) && !empty($_POST['selected_posts'])) {
+        check_admin_referer('sync_action_' . $post_type, 'sync_nonce'); // CSRF check
         foreach ($_POST['selected_posts'] as $post_id) {
-            copy_post_and_acf_data($post_id);
+            copy_post_and_acf_data((int) $post_id);
         }
         echo '<p style="color: green;">✅ Đồng bộ thành công!</p>';
     }
@@ -370,6 +362,7 @@ function display_sync_page($post_type) {
     
     if ($query->have_posts()) {
         echo '<form method="post">';
+        wp_nonce_field('sync_action_' . $post_type, 'sync_nonce');
         echo '<table class="widefat fixed">';
         echo '<thead><tr><th style="width: 45px;">Chọn</th><th>Tiêu đề</th><th>Trạng thái</th></tr></thead>';
         echo '<tbody>';

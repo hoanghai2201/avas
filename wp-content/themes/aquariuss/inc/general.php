@@ -31,6 +31,7 @@ function general_settings_page_markup() {
 
     // Lưu dữ liệu khi người dùng nhấn Submit
     if (isset($_POST['submit'])) {
+        check_admin_referer('general_settings_save', 'general_settings_nonce'); // CSRF check
         update_option('site_favicon', esc_url($_POST['site_favicon'])); // Logo lưu dưới dạng URL
         update_option('site_logo', esc_url($_POST['site_logo'])); // Logo lưu dưới dạng URL
         update_option('site_logo_mb', esc_url($_POST['site_logo_mb'])); // Logo lưu dưới dạng URL
@@ -58,6 +59,7 @@ function general_settings_page_markup() {
     <div class="wrap">
         <h1>General Settings</h1>
         <form method="POST">
+            <?php wp_nonce_field('general_settings_save', 'general_settings_nonce'); ?>
             <table class="form-table form-general">
                 <tr valign="top">
                     <th scope="row">Favicon:</th>

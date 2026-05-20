@@ -10,13 +10,16 @@ global $domain;
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/popper.min.js"></script>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/aos.js"></script>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/jquery-3.6.4.min.js"></script>
+<?php // jQuery được cung cấp bởi WordPress, không cần load thêm ?>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/flatpickr.js"></script>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/flickity.pkgd.min.js"></script>
 <?php if(is_page('oem-works')): ?>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/lightbox.js"></script>
 <?php endif; ?>
 <script>
+    // jQuery được load bởi WordPress — gán alias $ để dùng trong inline scripts
+    var $ = jQuery;
+
     window.addEventListener('scroll', function () {
         const navbar = document.getElementById('navbar');
         if (window.scrollY > 100) {
@@ -192,27 +195,21 @@ global $domain;
 <script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 <script src="<?php echo $domain; ?>/wp-content/themes/aquariuss/js/jquery.zoom.min.js?v=1.0"></script>
 <script>
-    var flkty = new Flickity('.main-carousel', {
-        autoPlay: true,
-        wrapAround: true,
-        pageDots: true,
-        prevNextButtons: true,
-        friction: 0.3
-    });
-
+    // Chỉ khởi tạo Flickity 1 lần sau khi tất cả ảnh đã load xong
     var mainCarousel = document.querySelector('.main-carousel');
-    imagesLoaded(mainCarousel, { background: true }, function(instance) {
-        console.log('Main gallery images loaded:', instance.images.length);
-        let mainFlkty = new Flickity(mainCarousel, {
-            autoPlay: true,
-            wrapAround: true,
-            pageDots: true,
-            prevNextButtons: true,
-            friction: 0.3
+    if (mainCarousel) {
+        imagesLoaded(mainCarousel, { background: true }, function() {
+            var mainFlkty = new Flickity(mainCarousel, {
+                autoPlay: true,
+                wrapAround: true,
+                pageDots: true,
+                prevNextButtons: true,
+                friction: 0.3
+            });
+            mainFlkty.resize();
+            mainFlkty.reloadCells();
+            setTimeout(function() { mainFlkty.resize(); }, 100);
         });
-        mainFlkty.resize();
-        mainFlkty.reloadCells();
-        setTimeout(() => mainFlkty.resize(), 100);
-    });
+    }
 </script>
 <?php endif; ?>
