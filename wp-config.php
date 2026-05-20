@@ -41,25 +41,24 @@
 
 /** The name of the database for WordPress */
 
+if ($_SERVER['HTTP_HOST'] === 'avas.local') {
+    define('WP_HOME', 'http://avas.local');
+    define('WP_SITEURL', 'http://avas.local');
+	define('DB_HOST', 'localhost');
+	define('DB_USER', "root");
+	define('DB_PASSWORD', "");
+	define('DB_NAME', "avas");
+	
+} else {
+    define('WP_HOME', 'http://avas.maylambanhanhtung.com/');
+    define('WP_SITEURL', 'http://avas.maylambanhanhtung.com/');
+	define('DB_HOST', '103.74.121.5:3306');
+	define('DB_USER', "amazingx_anh");
+	define('DB_PASSWORD', "eaT)d2V9QlJ{");
+	define('DB_NAME', "amazingx_avas");
+}
+
 define('AUTOSAVE_INTERVAL', 86400);
-
-define('DB_NAME', "avas");
-
-
-/** MySQL database username */
-
-define('DB_USER', "root");
-
-
-/** MySQL database password */
-
-define('DB_PASSWORD', "");
-
-
-/** MySQL hostname */
-
-define('DB_HOST', "localhost");
-
 
 /** Database Charset to use in creating database tables. */
 
