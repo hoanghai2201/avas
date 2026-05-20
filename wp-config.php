@@ -1,5 +1,5 @@
 <?php
-ppppppppppppp
+
 /**
 
  * The base configuration for WordPress
@@ -148,7 +148,7 @@ $table_prefix  = 'wp_';
 
  */
 
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', false);
 // define('WP_DEBUG', true);
 
 error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
@@ -160,7 +160,7 @@ error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
 
 /** Absolute path to the WordPress directory. */
 
-if ( !defined('ABSPATH') )
+if (!defined('ABSPATH'))
 
 	define('ABSPATH', dirname(__FILE__) . '/');
 
@@ -168,4 +168,3 @@ if ( !defined('ABSPATH') )
 /** Sets up WordPress vars and included files. */
 
 require_once(ABSPATH . 'wp-settings.php');
-
