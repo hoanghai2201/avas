@@ -1,0 +1,1 @@
+D:\Setup\xampp\mysql\bin\mysql -uroot -p"" avas < D:\Setup\xampp\htdocs\avas\database.sql
