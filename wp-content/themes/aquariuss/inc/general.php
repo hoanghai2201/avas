@@ -13,16 +13,6 @@ function add_general_settings_menu() {
 }
 add_action('admin_menu', 'add_general_settings_menu');
 
-if (function_exists('acf_add_options_sub_page')) {
-    acf_add_options_sub_page(array(
-        'page_title'  => 'General Settings',  // Tiêu đề trang
-        'menu_title'  => 'General Settings',  // Tên trên menu (phải trùng với tên đã tạo)
-        'parent_slug' => 'general-settings',  // Slug của trang cha
-        'menu_slug'   => 'general-settings',  // Slug của trang (phải trùng với trang đã tạo)
-        'capability'  => 'manage_options',    // Quyền truy cập
-    ));
-}
-
 function general_settings_page_markup() {
     // Kiểm tra quyền quản lý
     if (!current_user_can('manage_options')) {
@@ -35,11 +25,9 @@ function general_settings_page_markup() {
         update_option('site_favicon', esc_url($_POST['site_favicon'])); // Logo lưu dưới dạng URL
         update_option('site_logo', esc_url($_POST['site_logo'])); // Logo lưu dưới dạng URL
         update_option('site_logo_mb', esc_url($_POST['site_logo_mb'])); // Logo lưu dưới dạng URL
-        update_option('site_bg_news', esc_url($_POST['site_bg_news'])); // Logo lưu dưới dạng URL
-        update_option('site_bg_mb_news', esc_url($_POST['site_bg_mb_news']));
-        update_option('icon_new', esc_url($_POST['icon_new'])); // Logo lưu dưới dạng URL
         update_option('site_phone_number', sanitize_text_field($_POST['site_phone_number']));
         update_option('site_address', sanitize_text_field($_POST['site_address']));
+        update_option('site_address2', sanitize_text_field($_POST['site_address2']));
         update_option('site_footer_text', sanitize_text_field($_POST['site_footer_text']));
     }
 
@@ -47,11 +35,9 @@ function general_settings_page_markup() {
     $favicon = get_option('site_favicon');
     $logo = get_option('site_logo');
     $logo_mb = get_option('site_logo_mb');
-    $bg_news = get_option('site_bg_news');
-    $bg_mb_news = get_option('site_bg_mb_news');
-    $icon_new = get_option('icon_new');
     $phone_number = get_option('site_phone_number');
     $address = get_option('site_address');
+    $address2 = get_option('site_address2');
     $footer_text = get_option('site_footer_text');
 
     // Giao diện form để nhập số điện thoại, địa chỉ, logo
@@ -83,33 +69,16 @@ function general_settings_page_markup() {
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Background Mặc định Tin tức: </th>
-                    <td>
-                        <input type="text" id="site_bg_news" name="site_bg_news" value="<?php echo esc_attr($bg_news); ?>" />
-                        <input type="button" id="upload-bgnews-button" class="button" value="Upload Image" />
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Background Mobile Mặc định Tin tức: </th>
-                    <td>
-                        <input type="text" id="site_bg_mb_news" name="site_bg_mb_news" value="<?php echo esc_attr($bg_mb_news); ?>" />
-                        <input type="button" id="upload-bgmbnews-button" class="button" value="Upload Image" />
-                    </td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Icon Sản phẩm mới:</th>
-                    <td>
-                        <input type="text" id="icon_new" name="icon_new" value="<?php echo esc_attr($icon_new); ?>" />
-                        <input type="button" id="upload-icon-new" class="button" value="Upload Logo" />
-                    </td>
-                </tr>
-                <tr valign="top">
                     <th scope="row">Số điện thoại:</th>
                     <td><input type="text" name="site_phone_number" value="<?php echo esc_attr($phone_number); ?>" /></td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Địa chỉ:</th>
+                    <th scope="row">Địa chỉ 1:</th>
                     <td><input type="text" name="site_address" value="<?php echo esc_attr($address); ?>" /></td>
+                </tr>
+                <tr valign="top">
+                    <th scope="row">Địa chỉ 2:</th>
+                    <td><input type="text" name="site_address2" value="<?php echo esc_attr($address2); ?>" /></td>
                 </tr>
                 <tr valign="top">
                     <th scope="row">Footer Text:</th>
