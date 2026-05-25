@@ -4061,4 +4061,82 @@ button.read-more {
     }
 }
 
+.obj-fit-cover {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Home Section 1 */
+.section-1 .flickity-page-dots {
+    bottom: 20px;
+}
+.section-1 .flickity-page-dots .dot {
+    width: 12px;
+    height: 12px;
+    background: #fff;
+    opacity: 0.5;
+}
+.section-1 .flickity-page-dots .dot.is-selected {
+    opacity: 1;
+    background: #d97539;
+}
+
+/* Home General */
+.text-orange { color: #d97539 !important; }
+.text-blue { color: #3e6896 !important; }
+
+/* Home Section 2 */
+.sec2-stats h3 { font-size: 28px; line-height: 1.2; }
+.sec2-stats p { font-size: 13px; }
+
+/* Home Section 3 */
+.service-card { transition: transform 0.3s ease; }
+.service-card:hover { transform: translateY(-5px); }
+
+/* Home Section 4 */
+.solution-card img { transition: transform 0.3s ease; }
+.solution-card:hover img { transform: scale(1.05); }
+
+/* Home Section 6 */
+.project-card img { transition: opacity 0.3s ease; }
+.project-card:hover img { opacity: 0.9; }
+
+/* Home Section 7 */
+.main-news-card img, .sub-news-card img { transition: transform 0.3s ease; }
+.main-news-card:hover img, .sub-news-card:hover img { transform: scale(1.03); }
+
+/* Home Section 8 */
+.sponsor-logo img { filter: grayscale(100%); transition: filter 0.3s ease; }
+.sponsor-logo:hover img { filter: grayscale(0%); }
+
+/* Section 2 Image Styling */
+.sec2-img-custom {
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Section 5 Slanted Edge */
+.sec5-content-wrap {
+    background-color: #102a50;
+}
+@media (min-width: 992px) {
+    .sec5-content-wrap::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -30px;
+        width: 60px;
+        background-color: #102a50;
+        transform: skewX(-8deg);
+        z-index: -1;
+    }
+}
+
+/* Responsive Overrides */
+@media (max-width: 767px) {
+    .title-with-line { font-size: 24px !important; }
+    .sec2-stats h3 { font-size: 24px !important; }
+}
+
 @media (min-width: 1200px) {}
