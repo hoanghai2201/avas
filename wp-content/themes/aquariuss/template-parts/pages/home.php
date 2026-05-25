@@ -138,7 +138,11 @@ global $domain;
         <div class="row g-3 c-block mb-3 align-items-center">
             <div class="col-md-6 col-sm-12">
                 <div class="relative box-color-img">
-                    <div class="box-color" style="background: url(<?php echo esc_url(get_field('image_color')['url']); ?>) repeat top left;" data-aos="fade-up">
+                    <?php
+                        $image_color = get_field('image_color');
+                        $image_color_url = is_array($image_color) ? $image_color['url'] : $image_color;
+                    ?>
+                    <div class="box-color" style="background: url(<?php echo esc_url($image_color_url); ?>) repeat top left;" data-aos="fade-up">
                         <div class="relative fulfill">
                             <div class="content-project">
                                 <img src="<?php echo $domain; ?>/wp-content/themes/aquariuss/images/project-icon.svg" />
@@ -147,14 +151,19 @@ global $domain;
                             </div>
                         </div>
                     </div>
-                    <img src="<?php echo esc_url(get_field('image_lab')['url']); ?>" alt="<?php echo esc_attr(get_field('image_lab')['alt']); ?>" data-aos="fade-up" data-aos-delay="400" />
+                    <?php
+                        $image_lab = get_field('image_lab');
+                        $image_lab_url = is_array($image_lab) ? $image_lab['url'] : $image_lab;
+                        $image_lab_alt = is_array($image_lab) ? $image_lab['alt'] : '';
+                    ?>
+                    <img src="<?php echo esc_url($image_lab_url); ?>" alt="<?php echo esc_attr($image_lab_alt); ?>" data-aos="fade-up" data-aos-delay="400" />
                 </div>
             </div>
             <div class="col-md-6 col-sm-12">
                 <p class="fs-18 fw-500" data-aos="fade-up"><?php echo esc_attr(get_field('text_bold')); ?></p>
                 <p data-aos="fade-up" data-aos-delay="400"><?php echo esc_attr(get_field('text_normal')); ?></p>
                 <div class="align-center-mb">
-                    <a class="button btn-default mt-3" href="<?php echo esc_url(get_field('link_s4')); ?>" data-aos="fade-up"><?php echo pll__('Learn More'); ?></a>
+                    <a class="button btn-default mt-3" href="<?php echo esc_url(get_field('link_s4')); ?>" data-aos="fade-up">Tìm hiểu thêm</a>
                 </div>
             </div>
         </div>
@@ -216,7 +225,7 @@ global $domain;
             </div>
             <div class="align-center">
                 <a class="button btn-default mt-3" href="<?php echo esc_url(get_field('link_all_news')); ?>" data-aos="fade-up">
-                    <?php echo pll__('View All News'); ?>
+                    Xem tất cả tin tức
                     <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M8.83333 1.33331L13.5 5.99998M13.5 5.99998L8.83333 10.6666M13.5 5.99998L1.5 5.99998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>

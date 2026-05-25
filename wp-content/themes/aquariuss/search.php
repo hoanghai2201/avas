@@ -44,7 +44,6 @@ $search_query = new WP_Query($args);
                         $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                         $args = array(
                             'cat' => get_query_var('cat'),
-                            'lang' => pll_current_language(),
                             'posts_per_page' => $posts_per_page,
                             'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                         );
@@ -121,14 +120,12 @@ $search_query = new WP_Query($args);
                     <h5 class="pyt-5 mb-3"><?php echo pll__('Latest Articles'); ?></h5>
                     <div class="box-lastest-inner mtm-08">
                     <?php
-                        $current_language = pll_current_language();
                         $args = array(
                             'post_type' => 'post',
                             'posts_per_page' => 5,
                             'post_status' => 'publish',
                             'orderby' => 'date',
                             'order' => 'DESC',
-                            'lang' => $current_language,
                         );
                         $query = new WP_Query($args);
                         if ($query->have_posts()) : 
@@ -165,7 +162,6 @@ $search_query = new WP_Query($args);
                         $args = array(
                             'taxonomy' => 'category',
                             'hide_empty' => false,
-                            'lang' => $current_language,
                             'parent' => 0,
                             'orderby' => 'name',
                             'order' => 'ASC',
@@ -180,7 +176,6 @@ $search_query = new WP_Query($args);
                                 $child_args = array(
                                     'taxonomy' => 'category',
                                     'hide_empty' => false,
-                                    'lang' => $current_language,
                                     'parent' => $category->term_id,
                                 );
                                 $child_categories = get_categories($child_args);

@@ -20,12 +20,7 @@ global $domain;
     <div class="collapse navbar-collapse d-none d-lg-flex">
         <ul class="navbar-nav mx-auto">
             <?php
-                $current_language = pll_current_language();
-                if ($current_language == 'vi') {
-                    $menu_name = 'Menu Main'; 
-                } elseif ($current_language == 'en') {
-                    $menu_name = 'Menu Main EN';
-                }
+                $menu_name = 'Menu Main'; 
                 $menu_items = wp_get_nav_menu_items($menu_name);
                 if ($menu_items) {
                     foreach ($menu_items as $item) {
@@ -112,28 +107,5 @@ global $domain;
             </div>
         </div>
     </div>
-    <div class="language hidden-mobile">
-        <ul>
-            <?php
-                $languages = pll_the_languages(array(
-                    'dropdown' => 0,       // Hiển thị dưới dạng danh sách, không phải dropdown
-                    'show_flags' => 0,     // Hiển thị cờ quốc gia
-                    'show_names' => 0,     // Hiển thị tên ngôn ngữ
-                    'hide_if_empty' => 0,  // Không ẩn nếu không có ngôn ngữ
-                    'force_home' => 0,     // Không chuyển về trang chủ khi đổi ngôn ngữ
-                    'raw' => 1             // Trả về kết quả dạng mảng
-                ));
 
-                if (!empty($languages)) {
-                    foreach ($languages as $lang) {
-                        if ($lang['current_lang']) {
-                            echo '<li><a class="active">' . $lang['name'] . '</a></li>';
-                        } else {
-                            echo '<li><a href="' . esc_url($lang['url']) . '">' . $lang['name'] . '</a></li>';
-                        }                                    
-                    }
-                }
-            ?>
-        </ul>
-    </div>
 </div>

@@ -5,13 +5,11 @@ global $domain;
 $domain = get_option('siteurl'); //str_replace('/' . $current_language, '', $site_url);
 
 function get_latest_posts_by_category($category_id, $num_post = 5, $offset = 0){
-	$current_language = pll_current_language();
 	$translated_category_id = pll_get_term($category_id);
     $args = array(
         'cat'            => $translated_category_id,
         'posts_per_page' => $num_post,
         'offset'         => $offset,
-        'lang'           => $current_language,
         'orderby'        => 'date', 
         'order'          => 'DESC',
     );
@@ -43,7 +41,7 @@ function custom_posts_per_page_by_category($query) {
     if ($query->is_category() && $query->is_main_query()) {
         $current_category = get_queried_object();
         if ($current_category) {
-            $category_id = pll_get_term($current_category->term_id, pll_current_language());
+            $category_id = pll_get_term($current_category->term_id);
             if (wp_is_mobile()) {
                 $query->set('posts_per_page', 9);
             } else {

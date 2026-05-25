@@ -107,7 +107,6 @@ global $domain;
             </div>
             <?php
                 $current_post_id = get_the_ID();
-                $current_language = pll_current_language();
                 $categories = wp_get_post_categories($current_post_id);
                 if(wp_is_mobile()){
                     $posts_per_page = 9;
@@ -119,7 +118,6 @@ global $domain;
                         'category__in'   => $categories,
                         'post__not_in'   => array($current_post_id),
                         'posts_per_page' => $posts_per_page,
-                        'lang'           => $current_language,
                     );
 
                     $related_posts_query = new WP_Query($args);

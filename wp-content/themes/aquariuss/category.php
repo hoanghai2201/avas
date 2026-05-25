@@ -13,7 +13,7 @@ get_header();
     <?php
         if (is_category()) {
             $current_category = get_queried_object();
-            $current_category_id = pll_get_term($current_category->term_id, pll_current_language());
+            $current_category_id = pll_get_term($current_category->term_id);
             if(in_array($current_category_id, [51,152])) {
                 get_template_part('template-parts/category/category-events');
             }elseif(in_array($current_category_id, [228,230,232,234])) { // 228,230: local

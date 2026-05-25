@@ -36,12 +36,7 @@ global $domain;
                         <div class="c-footer-list py-1">
                             <ul>
                                 <?php
-                                    $current_language = pll_current_language();
-                                    if ($current_language == 'vi') {
-                                        $menu_name = 'Menu Footer'; 
-                                    } elseif ($current_language == 'en') {
-                                        $menu_name = 'Menu Footer EN';
-                                    }
+                                    $menu_name = 'Menu Footer'; 
                                     $menu_items = wp_get_nav_menu_items($menu_name);
                                     if ($menu_items) {
                                         foreach ($menu_items as $item) {

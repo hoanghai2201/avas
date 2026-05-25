@@ -13,7 +13,6 @@ $term = get_queried_object();
 $args = array(
     'post_type'      => 'project',
     'posts_per_page' => -1,
-    'lang'           => pll_current_language(),
     'orderby'        => 'date',
     'order'          => 'DESC',
     'tax_query'      => array(

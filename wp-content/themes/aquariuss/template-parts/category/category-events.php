@@ -102,7 +102,6 @@ global $domain;
                                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
                                 $args = array(
                                     'cat' => get_query_var('cat'),
-                                    'lang' => pll_current_language(),
                                     'posts_per_page' => $posts_per_page,
                                     'paged' => get_query_var('paged') ? get_query_var('paged') : 1,
                                 );
