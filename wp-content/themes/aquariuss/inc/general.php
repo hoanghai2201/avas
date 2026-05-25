@@ -22,6 +22,7 @@ function general_settings_page_markup() {
     // Lưu dữ liệu khi người dùng nhấn Submit
     if (isset($_POST['submit'])) {
         check_admin_referer('general_settings_save', 'general_settings_nonce'); // CSRF check
+        update_option('site_title', sanitize_text_field($_POST['site_title']));
         update_option('site_favicon', esc_url($_POST['site_favicon'])); // Logo lưu dưới dạng URL
         update_option('site_logo', esc_url($_POST['site_logo'])); // Logo lưu dưới dạng URL
         update_option('site_logo_mb', esc_url($_POST['site_logo_mb'])); // Logo lưu dưới dạng URL
@@ -32,6 +33,7 @@ function general_settings_page_markup() {
     }
 
     // Lấy dữ liệu đã lưu
+    $site_title = get_option('site_title');
     $favicon = get_option('site_favicon');
     $logo = get_option('site_logo');
     $logo_mb = get_option('site_logo_mb');
@@ -47,6 +49,10 @@ function general_settings_page_markup() {
         <form method="POST">
             <?php wp_nonce_field('general_settings_save', 'general_settings_nonce'); ?>
             <table class="form-table form-general">
+                <tr valign="top">
+                    <th scope="row">Tiêu đề trang:</th>
+                    <td><input type="text" name="site_title" value="<?php echo esc_attr($site_title); ?>" /></td>
+                </tr>
                 <tr valign="top">
                     <th scope="row">Favicon:</th>
                     <td>

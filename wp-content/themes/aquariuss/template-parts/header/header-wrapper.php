@@ -7,7 +7,10 @@
  */
 global $domain;
 ?>
-<div class="container orderby-mobile">
+
+<div class="top-blue-bar d-none d-lg-block"></div>
+
+<div class="container orderby-mobile custom-header-container">
     <a class="navbar-brand od-1" href="<?php echo $domain; ?>" title="<?php echo get_bloginfo('name') ?>">
         <img class="logo-white" src="<?php echo esc_url(get_option('site_logo')); ?>" alt="<?php echo get_bloginfo('name') ?>" />
     </a>
@@ -17,8 +20,8 @@ global $domain;
         <span></span>
     </button>
     
-    <div class="collapse navbar-collapse d-none d-lg-flex">
-        <ul class="navbar-nav mx-auto">
+    <div class="collapse navbar-collapse d-none d-lg-flex justify-content-end">
+        <ul class="navbar-nav custom-navbar-nav">
             <?php
                 $menu_name = 'Menu Main';
                 $menu_items = wp_get_nav_menu_items($menu_name);
@@ -73,37 +76,4 @@ global $domain;
             ?>
         </ul>
     </div>
-    
-    <div id="box-search" class="position-relative od-2 box-search-mb">
-        <button class="btn" id="search-btn">
-            <img src="<?php echo $domain; ?>/wp-content/themes/aquariuss/images/search.svg" />
-        </button>
-        <div class="close-icon" onclick="close_search()">
-            <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <line x1="1.25" y1="-1.25" x2="24.3523" y2="-1.25" transform="matrix(0.717094 0.696976 -0.717094 0.696976 0.736816 2.02344)" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="1.25" y1="-1.25" x2="24.3523" y2="-1.25" transform="matrix(0.717094 -0.696976 0.717094 0.696976 2.42334 20.0303)" stroke="black" stroke-width="2.5" stroke-linecap="round"/>
-            </svg>
-        </div>
-        <div id="search-box" class="search-box">
-            <div class="container">
-                <div class="row g-3 mb-3 justify-center">
-                    <div class="col-md-6 col-sm-12">
-                        <form method="get" class="searchform" action="<?php echo $domain; ?>/" role="search">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M13.6018 15.4258C12.187 16.4589 10.4421 17.0689 8.55444 17.0689C3.82995 17.0689 0 13.248 0 8.5345C0 3.82102 3.82995 0 8.55444 0C13.279 0 17.1088 3.82102 17.1088 8.5345C17.1088 10.4416 16.4819 12.2025 15.4224 13.6235C15.432 13.6324 15.4414 13.6415 15.4507 13.6509L19.6241 17.8145C20.1253 18.3146 20.1253 19.125 19.6241 19.6251C19.123 20.125 18.3106 20.125 17.8094 19.6251L13.6361 15.4613C13.6244 15.4497 13.613 15.4379 13.6018 15.4258ZM14.5425 8.5345C14.5425 11.8339 11.8616 14.5086 8.55444 14.5086C5.2473 14.5086 2.56633 11.8339 2.56633 8.5345C2.56633 5.23507 5.2473 2.56035 8.55444 2.56035C11.8616 2.56035 14.5425 5.23507 14.5425 8.5345Z" fill="#ED1B24"/>
-                            </svg>
-                            <input placeholder="Search this site" type="text" name="s" value="" id="s" tabindex="9" class="input-search" >
-                            <button type="submit" class="btn-icon-search" name="action" value="search" aria-label="button">
-                              <!-- SEARCH -->
-                              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 5.061 8.707">
-                                <path d="M377.82-97.27l4,4-4,4" transform="translate(-377.467 97.623)" fill="none" stroke="#333" stroke-width=".5"></path>
-                              </svg>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 </div>
