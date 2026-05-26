@@ -39,8 +39,17 @@ global $domain;
                                 }
                             }
 
+                            $current_url = home_url(add_query_arg(array(), $GLOBALS['wp']->request));
+                            $item_url = rtrim($url, '/');
+                            $current_path = rtrim(parse_url($current_url, PHP_URL_PATH), '/');
+                            $item_path = rtrim(parse_url($item_url, PHP_URL_PATH), '/');
+                            // Also check by object ID (works for pages, custom post types)
+                            $queried_id = get_queried_object_id();
+                            $is_active = ($current_path === $item_path || ($item->object_id && $queried_id == $item->object_id));
+                            $active_class = $is_active ? ' active' : '';
+
                             if ($has_submenu) {
-                                echo '<li class="nav-item">';
+                                echo '<li class="nav-item'.$active_class.'">';
                                 echo '<a class="nav-link" href="'.esc_url($url).'">'.esc_html($title).'</a>';
                                 echo '<div class="mega-menu">';
                                 echo '<div class="mega-menu-content">';
@@ -63,7 +72,7 @@ global $domain;
                                 echo '</ul></div>';
                                 echo '</div></div></div></div>';
                             }else{
-                                echo '<li class="nav-item">';
+                                echo '<li class="nav-item'.$active_class.'">';
                                 echo '<a class="nav-link" title="'.esc_html($title).'" href="'.esc_url($url).'">'.esc_html($title).'</a>';
                             }
 

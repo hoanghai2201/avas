@@ -233,24 +233,38 @@ global $domain;
         
         <div class="carousel project-carousel js-flickity" data-flickity='{ "cellAlign": "left", "wrapAround": true, "pageDots": false, "groupCells": 1 }'>
             <?php
-            $sec6_projects = get_field('sec6_projects');
-            if($sec6_projects):
-                foreach($sec6_projects as $post): 
-                    setup_postdata($post);
+            $args = array(
+                'post_type'      => 'project',
+                'posts_per_page' => -1,
+                'post_status'    => 'publish',
+            );
+            $project_query = new WP_Query($args);
+            
+            if($project_query->have_posts()):
+                while($project_query->have_posts()): 
+                    $project_query->the_post();
             ?>
-            <div class="carousel-cell px-3 w-100 w-md-50 w-lg-33" style="width: 33.333%;">
+            <div class="carousel-cell px-3">
                 <div class="project-card">
                     <a href="<?php the_permalink(); ?>" class="d-block mb-3">
-                        <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'large'); ?>" class="w-100 obj-fit-cover" style="height: 380px;" alt="<?php the_title(); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-100 obj-fit-cover" style="height: 380px;" alt="<?php the_title(); ?>">
                     </a>
                     <h6 class="text-uppercase fw-bold text-blue mb-1" style="color: #3e6896; font-size: 15px;">
                         <a href="<?php the_permalink(); ?>" class="text-decoration-none" style="color: inherit;"><?php the_title(); ?></a>
                     </h6>
-                    <p class="small text-dark mb-0" style="font-size: 12px;"><?php echo wp_trim_words(get_the_excerpt(), 15); ?></p>
+                    <?php 
+                    $project_type = get_field('type', get_the_ID());
+                    $project_address = get_field('address', get_the_ID());
+                    if ($project_type): ?>
+                        <p class="text-dark mb-0 mt-2" style="font-size: 13px;">Loại sản phẩm: <?php echo esc_html($project_type); ?></p>
+                    <?php endif; ?>
+                    <?php if ($project_address): ?>
+                        <p class="text-dark mb-0" style="font-size: 13px;"><?php echo esc_html($project_address); ?></p>
+                    <?php endif; ?>
                 </div>
             </div>
             <?php 
-                endforeach;
+                endwhile;
                 wp_reset_postdata();
             endif; 
             ?>
