@@ -50,8 +50,8 @@ if ($_SERVER['HTTP_HOST'] === 'avas.local') {
 	define('DB_NAME', "avas");
 	
 } else {
-    define('WP_HOME', 'http://avas.maylambanhanhtung.com/');
-    define('WP_SITEURL', 'http://avas.maylambanhanhtung.com/');
+    define('WP_HOME', 'https://avas.maylambanhanhtung.com/');
+    define('WP_SITEURL', 'https://avas.maylambanhanhtung.com/');
 	define('DB_HOST', '103.74.121.5:3306');
 	define('DB_USER', "amazingx_anh");
 	define('DB_PASSWORD', "eaT)d2V9QlJ{");
