@@ -1,6 +1,6 @@
 <?php
 /**
- * The blog template file.
+ * Single Post Template.
  *
  * @package          Aquariuss\Templates
  * @aquariuss-version 1.0.0
@@ -8,205 +8,203 @@
 
 get_header();
 global $domain;
+the_post(); // Run the loop once globally
 ?>
-<section id="section-1" class="pb-5">
-    <div class="box-banner banner-about relative">
-        <?php
-            if(wp_is_mobile()){
-                $bgNews = get_option('site_bg_mb_news');
-                $image  = get_field('background_mobile');
-                if(empty($image['url'])){
-                    $image['url'] = $bgNews;
-                    $image['alt'] = get_the_title();
-                }else{
-                    $image = get_field('background_mobile');
-                }
-            } else {
-                $bgNews = get_option('site_bg_news');
-                $image  = get_field('background');
-                if(empty($image['url'])){
-                    $image['url'] = $bgNews;
-                    $image['alt'] = get_the_title();
-                }else{
-                    $image = get_field('background');
-                }
-            }
-        ?>
-        <img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo esc_attr($image['alt']); ?>" />
-    </div>
-    <div class="container">
-        <div class="title-post">
-            <?php
-                if (have_posts()) :
-                    while (have_posts()) : the_post();
-                        $publish_date = get_the_date('d/m/Y'); ?>
-                        <h1><?php the_title(); ?></h1>
-                        <div class="text-center pt-4">
-                            <span class="created_date"><?php echo esc_html($publish_date); ?></span>
-                        </div>
-                    <?php endwhile;
-                endif;
+
+<!-- =============================================
+     SECTION 1: Banner / Slider (Optional)
+     ============================================= -->
+<section class="single-hero position-relative">
+    <?php if ( have_rows('slide') ) : ?>
+        <!-- Has ACF slides -->
+        <div class="main-carousel js-flickity" data-flickity='{ "wrapAround": true, "pageDots": true, "prevNextButtons": false, "autoPlay": 5000 }'>
+            <?php while ( have_rows('slide') ) : the_row();
+                $img = wp_is_mobile() ? get_sub_field('image_mobile') : get_sub_field('image_pc');
+                if ( ! $img ) $img = wp_is_mobile() ? get_sub_field('image_pc') : get_sub_field('image_mobile');
+                $slide_title   = get_sub_field('title');
+                $slide_content = get_sub_field('content');
             ?>
-        </div>        
-    </div>
-</section>
+            <div class="carousel-cell w-100 position-relative single-slide-cell">
+                <?php if ( $img ) : ?>
+                    <img src="<?php echo esc_url($img['url']); ?>" alt="<?php echo esc_attr($img['alt']); ?>" class="single-slide-img w-100 obj-fit-cover d-block">
+                <?php else : ?>
+                    <div class="single-slide-img single-slide-placeholder"></div>
+                <?php endif; ?>
+                <div class="position-absolute top-0 start-0 w-100 h-100 single-slide-overlay"></div>
+                <?php if ( $slide_title || $slide_content ) : ?>
+                <div class="single-slide-content position-absolute text-white">
+                    <?php if ( $slide_title ) : ?>
+                        <h2 class="single-slide-title"><?php echo wp_kses_post($slide_title); ?></h2>
+                    <?php endif; ?>
+                    <?php if ( $slide_content ) : ?>
+                        <div class="single-slide-desc"><?php echo wp_kses_post($slide_content); ?></div>
+                    <?php endif; ?>
+                    <?php $hotline = get_option('site_phone_number'); if ($hotline) : ?>
+                        <a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $hotline)); ?>" class="btn single-slide-btn text-white fw-bold text-uppercase mt-3">
+                            Hotline <?php echo esc_html($hotline); ?>
+                        </a>
+                    <?php endif; ?>
+                </div>
+                <?php endif; ?>
+            </div>
+            <?php endwhile; ?>
+        </div>
 
-<section id="section-2" class="pb-2">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <?php
-                    if (have_posts()) :
-                        while (have_posts()) : the_post(); ?>
-                            <div class="post-content">
-                                <div class="desc-content">
-                                    <?php echo nl2br(esc_html(get_field('description'))); ?>
-                                </div>
-                                <?php the_content(); ?>
-                            </div>
-                            <div class="bottom-posts">
-                                <?php
-                                    // Get the current post URL and title
-                                    $current_post_url = get_permalink();
-                                    $current_post_title = urlencode(get_the_title()); // Encode title for URL
-
-                                    // Define the social media links
-                                    $social_links = array(
-                                        'facebook' => 'https://www.facebook.com/sharer/sharer.php?u=' . urlencode($current_post_url),
-                                        'instagram' => 'https://www.instagram.com/share?url=' . urlencode($current_post_url),
-                                        'zalo' => 'https://zalo.me/share?link=' . urlencode($current_post_url),
-                                        'tiktok' => 'https://www.tiktok.com/share?url=' . urlencode($current_post_url),
-                                        'youtube' => 'https://www.youtube.com/share?url=' . urlencode($current_post_url),
-                                        'x' => 'https://twitter.com/intent/tweet?url=' . urlencode($current_post_url)
-                                    );
-                                ?>
-
-                                <div class="social-share">
-                                    <span><?php echo pll__('Share this article'); ?></span>
-                                    <div class="box-social box-social-detail">
-                                        <a target="_blank" href="<?php echo esc_url($social_links['x']); ?>"><img style="width: 41px; height: 41px;" src="<?php echo $domain; ?>/wp-content/themes/aquariuss/images/x.svg"></a>
-                                        <a target="_blank" href="<?php echo esc_url($social_links['facebook']); ?>"><img style="width: 41px; height: 41px;" src="<?php echo $domain; ?>/wp-content/themes/aquariuss/images/facebook.svg"></a>
-                                        <a target="_blank" href="<?php echo esc_url($social_links['instagram']); ?>"><img style="width: 41px; height: 41px;" src="<?php echo $domain; ?>/wp-content/themes/aquariuss/images/instagram.svg"></a>
-                                    </div>
-                                </div>
-                            </div>
-                        <?php endwhile;
-                    endif;
-                ?>
+    <?php else :
+        // No slides — show thumbnail or default bg
+        $thumb = get_the_post_thumbnail_url(get_the_ID(), 'full');
+        if ( ! $thumb ) $thumb = get_option('site_bg_news');
+    ?>
+        <div class="single-hero-banner position-relative overflow-hidden">
+            <?php if ( $thumb ) : ?>
+                <img src="<?php echo esc_url($thumb); ?>" alt="<?php the_title_attribute(); ?>" class="single-hero-img w-100 obj-fit-cover d-block">
+            <?php else : ?>
+                <div class="single-hero-img single-hero-placeholder"></div>
+            <?php endif; ?>
+            <div class="position-absolute top-0 start-0 w-100 h-100 single-slide-overlay"></div>
+            <div class="single-slide-content position-absolute text-white">
+                <div class="single-hero-badge text-uppercase mb-2">
+                    <?php $cats = get_the_category(); if ($cats) echo esc_html($cats[0]->name); ?>
+                </div>
+                <h1 class="single-slide-title"><?php the_title(); ?></h1>
+                <div class="single-hero-meta mt-2 d-flex align-items-center gap-3">
+                    <span class="single-hero-date">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                        <?php echo get_the_date('d/m/Y'); ?>
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
+    <?php endif; ?>
 </section>
 
-<section id="section-3">
+<!-- =============================================
+     SECTION 2: Post Content + Sidebar
+     ============================================= -->
+<section class="single-content-section py-5">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 col-sm-12">
-                <div class="pt-5 mt-5 bt"></div>
-                <h3 class="releated-title"><?php echo pll__('Other Articles'); ?></h3>
-            </div>
-            <?php
-                $current_post_id = get_the_ID();
-                $categories = wp_get_post_categories($current_post_id);
-                if(wp_is_mobile()){
-                    $posts_per_page = 9;
-                } else {
-                    $posts_per_page = 4;
-                }
-                if (!empty($categories)) {
-                    $args = array(
-                        'category__in'   => $categories,
-                        'post__not_in'   => array($current_post_id),
-                        'posts_per_page' => $posts_per_page,
-                    );
+        <div class="row g-5">
 
-                    $related_posts_query = new WP_Query($args);
+            <!-- MAIN CONTENT -->
+            <div class="col-lg-8">
+                <article class="single-article">
 
-                    if ($related_posts_query->have_posts()) {
-                        if(wp_is_mobile()): ?>
-                            <div class="col-lg-12 col-sm-12">
-                                <div class="carousel releated-list js-flickity" data-flickity='{ "wrapAround": true, "pageDots": false, "groupCells": 1, "freeScroll": false }'>
-                                <?php
-                                while($related_posts_query->have_posts()) {
-                                    $related_posts_query->the_post(); ?>
-                                    <div class="carousel-cell">
-                                        <div class="new-product align-center <?php if(!wp_is_mobile()): ?>has-hover <?php endif; ?>">
-                                            <a href="<?php the_permalink(); ?>" class="plain">
-                                                <div class="box-image2">
-                                                    <div class="image-zoom image-cover"> 
-                                                        <img decoding="async" src="<?php echo esc_url(get_the_post_thumbnail_url($post, 'large')); ?>" class="attachment-medium size-medium wp-post-image" alt="<?php the_title(); ?>" /> 
-                                                    </div>
-                                                </div>
-                                                <div class="box-text mpb-0">
-                                                    <div class="box-text-inner blog-post-inner">
-                                                        <h5 class="post-title is-large"><?php the_title(); ?></h5>
-                                                        <p class="from_the_blog_excerpt"><?php echo wp_trim_words(get_the_excerpt(), 20, '...'); ?></p>
-                                                        <a href="<?php the_permalink(); ?>" class="mt-1 btn-readmore-mb button-item"><?php echo pll__('Read more'); ?></a>
-                                                    </div>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-                                <?php } ?>
-                                </div>
-                            </div>
-                        <?php else:
-                            echo '<div class="row">';
-                            while($related_posts_query->have_posts()) {
-                                $related_posts_query->the_post();
-                                $categories = get_the_category();
-                                $selected_category = '';
-
-                                if ($categories) {
-                                    foreach ($categories as $category) {
-                                        if ($category->parent != 0) { // Nếu là danh mục con
-                                            $selected_category = $category;
-                                            break; // Ưu tiên danh mục con đầu tiên
-                                        }
-                                    }
-                                    if (!$selected_category) {
-                                        $selected_category = $categories[0];
-                                    }
-                                }
-                                ?>
-                                <div class="col-lg-3 col-md-3 col-sm-12 mb25" data-aos="fade-up">
-                                    <div class="col-inner">
-                                        <div class="box box-normal box-text-bottom box-blog-post has-hover">
-                                            <div class="image-news has-hover">
-                                                <a href="<?php the_permalink(); ?>" class="plain">
-                                                    <div class="box-image">
-                                                        <img decoding="async" src="<?php echo esc_url(get_the_post_thumbnail_url($post, 'large')); ?>" class="attachment-medium size-medium wp-post-image image-zoom" alt="<?php the_title(); ?>" />
-                                                        <?php if ($selected_category) : ?>
-                                                            <a class="category-post" href="<?php echo esc_url(get_category_link($selected_category->term_id)); ?>"><?php echo esc_html($selected_category->name); ?></a>
-                                                        <?php endif; ?>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="box-text mpb-0">
-                                                <div class="box-text-inner blog-post-inner">
-                                                    <h5 class="post-title is-large"><a href="<?php the_permalink(); ?>" class="plain"><?php the_title(); ?></a></h5>
-                                                    <p class="text-left from_the_blog_excerpt"><?php echo wp_trim_words(get_the_excerpt(), 25, '...'); ?></p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <a href="<?php the_permalink(); ?>" class="mt-1 btn-readmore button-item hide-for-medium">
-                                        <?php echo pll__('Learn More'); ?>
-                                        <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                            <path d="M8.83333 1.33331L13.5 5.99998M13.5 5.99998L8.83333 10.6666M13.5 5.99998L1.5 5.99998" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="stroke: #ED1B24;"></path>
-                                        </svg>  
+                    <!-- Title & Meta (shown when there IS a slider — banner doesn't show title) -->
+                    <?php if ( have_rows('slide') ) : ?>
+                        <div class="single-title-block mb-4">
+                            <div class="single-cat-badge mb-2">
+                                <?php $cats = get_the_category(); if ($cats) : ?>
+                                    <a href="<?php echo esc_url(get_category_link($cats[0]->term_id)); ?>" class="single-cat-link text-uppercase">
+                                        <?php echo esc_html($cats[0]->name); ?>
                                     </a>
-                                </div>
-                                <?php
-                            }
-                            echo '</div>'; ?>
-                        <?php endif;
-                    }
-                    wp_reset_postdata();
-                }
-            ?>
+                                <?php endif; ?>
+                            </div>
+                            <h1 class="single-post-title"><?php the_title(); ?></h1>
+                            <div class="single-post-meta d-flex align-items-center gap-3 mt-2">
+                                <span class="single-post-date">
+                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    <?php echo get_the_date('d/m/Y'); ?>
+                                </span>
+                            </div>
+                            <div class="single-title-divider mt-4"></div>
+                        </div>
+                    <?php else : ?>
+                        <!-- No slider: title was in hero, just show date + divider -->
+                        <div class="single-meta-bar d-flex align-items-center gap-3 mb-4">
+                            <span class="single-post-date">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                <?php echo get_the_date('d/m/Y'); ?>
+                            </span>
+                        </div>
+                        <div class="single-page-title mb-4">
+                            <h1 class="single-post-title"><?php the_title(); ?></h1>
+                            <div class="single-title-divider mt-3"></div>
+                        </div>
+                    <?php endif; ?>
+
+                    <!-- Post Body -->
+                    <div class="single-post-body entry-content">
+                        <?php the_content(); ?>
+                    </div>
+
+                    <!-- Social Share -->
+                    <div class="single-share-bar mt-5 pt-4">
+                        <?php
+                        $post_url   = urlencode(get_permalink());
+                        $share_links = [
+                            'facebook'  => 'https://www.facebook.com/sharer/sharer.php?u=' . $post_url,
+                            'x'         => 'https://twitter.com/intent/tweet?url=' . $post_url,
+                            'zalo'      => 'https://zalo.me/share?link=' . $post_url,
+                        ];
+                        ?>
+                        <span class="single-share-label fw-bold text-uppercase" style="font-size:13px; letter-spacing:1px; color:#3e6896;">
+                            <?php echo pll__('Share this article'); ?>
+                        </span>
+                        <div class="d-flex align-items-center gap-2 mt-2">
+                            <a href="<?php echo esc_url($share_links['facebook']); ?>" target="_blank" rel="noopener" class="single-share-btn single-share-fb" aria-label="Facebook">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                            </a>
+                            <a href="<?php echo esc_url($share_links['x']); ?>" target="_blank" rel="noopener" class="single-share-btn single-share-x" aria-label="X (Twitter)">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                            </a>
+                            <a href="<?php echo esc_url($share_links['zalo']); ?>" target="_blank" rel="noopener" class="single-share-btn single-share-zalo" aria-label="Zalo">
+                                <span style="font-size:12px; font-weight:700; line-height:1;">Zalo</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </article>
+            </div>
+
+            <!-- SIDEBAR: Related Posts -->
+            <div class="col-lg-4">
+                <aside class="single-sidebar">
+                    <div class="single-sidebar-header d-flex align-items-center mb-4">
+                        <div class="sidebar-accent-bar me-3"></div>
+                        <h3 class="sidebar-title mb-0 text-uppercase">Bài viết liên quan</h3>
+                    </div>
+
+                    <?php
+                    $current_id = get_the_ID();
+                    $cats       = wp_get_post_categories($current_id);
+                    $related    = new WP_Query([
+                        'category__in'   => $cats,
+                        'post__not_in'   => [$current_id],
+                        'posts_per_page' => 4,
+                        'orderby'        => 'date',
+                        'order'          => 'DESC',
+                    ]);
+                    if ( $related->have_posts() ) :
+                        while ( $related->have_posts() ) : $related->the_post();
+                            $rel_thumb = get_the_post_thumbnail_url(get_the_ID(), 'medium');
+                    ?>
+                    <article class="related-post-item d-flex gap-3 mb-4 align-items-start">
+                        <a href="<?php the_permalink(); ?>" class="related-thumb-wrap flex-shrink-0 overflow-hidden">
+                            <?php if ($rel_thumb) : ?>
+                                <img src="<?php echo esc_url($rel_thumb); ?>" alt="<?php the_title_attribute(); ?>" class="related-thumb-img">
+                            <?php else : ?>
+                                <div class="related-thumb-placeholder"></div>
+                            <?php endif; ?>
+                        </a>
+                        <div class="related-info">
+                            <span class="related-date d-block mb-1"><?php echo get_the_date('d/m/Y'); ?></span>
+                            <h5 class="related-title mb-0">
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </h5>
+                        </div>
+                    </article>
+                    <?php
+                        endwhile;
+                        wp_reset_postdata();
+                    else :
+                    ?>
+                        <p class="text-muted" style="font-size:14px;">Chưa có bài viết liên quan.</p>
+                    <?php endif; ?>
+                </aside>
+            </div>
+
         </div>
-    </div>    
+    </div>
 </section>
 
 <?php get_footer(); ?>
