@@ -4066,7 +4066,28 @@ button.read-more {
     object-position: center;
 }
 
+.border-8 {
+    border-width: 8px !important;
+}
+
 /* Home Section 1 */
+.section-1 h1 {
+    color: #fff;
+}
+
+.section-1 h3 {
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 130%;
+    letter-spacing: 0%;
+    color: #fff;
+}
+
+.section-1 p {
+    color: #fff;
+    margin: 15px 0;
+}
+
 .section-1 .flickity-page-dots {
     bottom: 20px;
 }
@@ -4089,13 +4110,13 @@ button.read-more {
 }
 
 .text-blue {
-    color: #3e6896 !important;
+    color: #00618D !important;
 }
 
 /* Home Section 2 */
 .sec2-stats h3 {
     font-size: 28px;
-    line-height: 1.2;
+    line-height: 0.8;
 }
 
 .sec2-stats p {
@@ -4152,26 +4173,35 @@ button.read-more {
 
 /* Section 2 Image Styling */
 .sec2-img-custom {
-    border-radius: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 130px;
 }
 
-/* Section 5 Slanted Edge */
-.sec5-content-wrap {
-    background-color: #102a50;
+.text-white p,
+.text-white span,
+.text-white a,
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6 {
+    color: #fff !important;
+}
+
+.capacity-title {
+    padding: 0 58%;
+    display: block;
+    width: 88%;
 }
 
 @media (min-width: 992px) {
-    .sec5-content-wrap::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: -30px;
-        width: 60px;
-        background-color: #102a50;
-        transform: skewX(-8deg);
-        z-index: -1;
+    .px-lg-5 {
+        padding-right: 2.5rem !important;
+        padding-left: 2.5rem !important;
+    }
+
+    .mt-5 {
+        margin-top: 2.5rem !important;
     }
 }
 
@@ -4193,13 +4223,14 @@ button.read-more {
 }
 
 .project-carousel .flickity-prev-next-button {
-    width: 60px;
-    height: 60px;
+    width: 82px;
+    height: 85px;
     background: transparent;
+    border-radius: 0;
 }
 
 .project-carousel .flickity-prev-next-button .flickity-button-icon {
-    fill: #3e6896;
+    display: none;
 }
 
 .project-carousel .flickity-prev-next-button:hover {
@@ -4207,19 +4238,19 @@ button.read-more {
 }
 
 .project-carousel .flickity-prev-next-button.previous {
-    left: -60px;
+    left: -65px;
+    background: url('../images/pre.svg') no-repeat center center;
+    background-size: contain;
 }
 
 .project-carousel .flickity-prev-next-button.next {
-    right: -60px;
+    right: -65px;
+    background: url('../images/next.svg') no-repeat center center;
+    background-size: contain;
 }
 
 /* Responsive Overrides */
 @media (max-width: 767px) {
-    .title-with-line {
-        font-size: 24px !important;
-    }
-
     .sec2-stats h3 {
         font-size: 24px !important;
     }
@@ -4291,7 +4322,7 @@ button.read-more {
 }
 
 .service-card:hover {
-    box-shadow: 0 8px 28px rgba(0,0,0,0.12) !important;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12) !important;
     transform: translateY(-3px);
 }
 
@@ -4363,14 +4394,14 @@ button.read-more {
     display: flex;
     align-items: stretch;
     background: #fff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
     margin-bottom: 2rem;
     overflow: hidden;
     transition: box-shadow 0.3s ease;
 }
 
 .solution-post-card:hover {
-    box-shadow: 0 8px 28px rgba(0,0,0,0.13);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.13);
 }
 
 .solution-post-card .card-image {
@@ -4500,7 +4531,7 @@ button.read-more {
     align-items: center;
     justify-content: center;
     margin: 0 auto 1rem;
-    box-shadow: 0 4px 12px rgba(30,80,136,0.25);
+    box-shadow: 0 4px 12px rgba(30, 80, 136, 0.25);
     transition: background 0.3s;
 }
 
@@ -4528,10 +4559,12 @@ button.read-more {
    RESPONSIVE - Tablet (max 991px)
    ========================================================================== */
 @media (max-width: 991px) {
+
     /* Services - Process timeline: stack vertically on tablet */
     .process-timeline {
         display: none !important;
     }
+
     .process-timeline-mobile {
         display: block !important;
     }
@@ -4561,6 +4594,7 @@ button.read-more {
    RESPONSIVE - Mobile (max 767px)
    ========================================================================== */
 @media (max-width: 767px) {
+
     /* Back to Top */
     #back-to-top {
         bottom: 20px;
@@ -4660,7 +4694,7 @@ button.read-more {
 }
 
 .single-slide-overlay {
-    background: linear-gradient(90deg, rgba(16,42,80,0.85) 0%, rgba(16,42,80,0.5) 55%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(90deg, rgba(16, 42, 80, 0.85) 0%, rgba(16, 42, 80, 0.5) 55%, rgba(0, 0, 0, 0.1) 100%);
     z-index: 1;
 }
 
@@ -4684,12 +4718,12 @@ button.read-more {
 .single-slide-desc {
     font-size: clamp(15px, 1.6vw, 18px);
     line-height: 1.7;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
 }
 
 .single-slide-desc * {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .single-slide-btn {
@@ -4725,7 +4759,7 @@ button.read-more {
 .single-hero-meta,
 .single-post-meta {
     font-size: 13px;
-    color: rgba(255,255,255,0.8);
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .single-hero-date,
@@ -4751,7 +4785,7 @@ button.read-more {
     background: #fff;
     border-radius: 4px;
     padding: 2.5rem 3rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 /* Category badge */
@@ -4877,16 +4911,27 @@ button.read-more {
     color: #fff;
 }
 
-.single-share-fb   { background: #1877f2; }
-.single-share-x    { background: #000; }
-.single-share-zalo { background: #0068ff; font-size: 11px; font-weight: 700; color: #fff; }
+.single-share-fb {
+    background: #1877f2;
+}
+
+.single-share-x {
+    background: #000;
+}
+
+.single-share-zalo {
+    background: #0068ff;
+    font-size: 11px;
+    font-weight: 700;
+    color: #fff;
+}
 
 /* --- Sidebar --- */
 .single-sidebar {
     background: #fff;
     border-radius: 4px;
     padding: 2rem 1.8rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     position: sticky;
     top: 130px;
 }
@@ -4973,6 +5018,7 @@ button.read-more {
    SINGLE - RESPONSIVE Tablet (max 991px)
    ========================================================================== */
 @media (max-width: 991px) {
+
     .single-slide-img,
     .single-hero-img {
         height: 55vh;
@@ -4998,6 +5044,7 @@ button.read-more {
    SINGLE - RESPONSIVE Mobile (max 767px)
    ========================================================================== */
 @media (max-width: 767px) {
+
     .single-slide-img,
     .single-hero-img,
     .single-slide-placeholder,
@@ -5008,7 +5055,7 @@ button.read-more {
     }
 
     .single-slide-overlay {
-        background: linear-gradient(180deg, rgba(16,42,80,0.7) 0%, rgba(16,42,80,0.5) 100%);
+        background: linear-gradient(180deg, rgba(16, 42, 80, 0.7) 0%, rgba(16, 42, 80, 0.5) 100%);
     }
 
     .single-slide-content {
@@ -5101,14 +5148,14 @@ button.read-more {
 .proj-slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to bottom, rgba(10,26,47,0.25) 0%, rgba(10,26,47,0.65) 100%);
+    background: linear-gradient(to bottom, rgba(10, 26, 47, 0.25) 0%, rgba(10, 26, 47, 0.65) 100%);
     pointer-events: none;
     z-index: 1;
 }
 
 /* Flickity prev/next buttons on gallery */
 .proj-main-gallery .flickity-button {
-    background: rgba(255,255,255,0.15);
+    background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4px);
     border-radius: 50%;
     width: 52px;
@@ -5122,7 +5169,7 @@ button.read-more {
 }
 
 .proj-main-gallery .flickity-button:hover {
-    background: rgba(217,117,57,0.85);
+    background: rgba(217, 117, 57, 0.85);
 }
 
 .proj-main-gallery .flickity-button svg path {
@@ -5205,7 +5252,7 @@ button.read-more {
     align-items: center;
     gap: 6px;
     font-size: 13px;
-    color: rgba(255,255,255,0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 .proj-meta-item svg {
@@ -5232,7 +5279,7 @@ button.read-more {
     background: #fff;
     border-radius: 8px;
     padding: 1rem 1.5rem;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
     flex: 1 1 200px;
     max-width: 320px;
 }
@@ -5276,7 +5323,7 @@ button.read-more {
     background: #fff;
     border-radius: 4px;
     padding: 2.5rem 3rem;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
 }
 
 .proj-article-divider {
@@ -5361,8 +5408,8 @@ button.read-more {
 
 /* Related carousel cells */
 .proj-related-carousel .flickity-button {
-    background: rgba(255,255,255,0.9);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 
 .proj-related-carousel .flickity-button:hover {
@@ -5410,7 +5457,7 @@ button.read-more {
 .proj-related-hover-overlay {
     position: absolute;
     inset: 0;
-    background: rgba(62,104,150,0.7);
+    background: rgba(62, 104, 150, 0.7);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -5568,20 +5615,21 @@ button.read-more {
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     height: 100%;
 }
 
 .project-page-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
 
 .project-page-img-wrap {
     position: relative;
     width: 100%;
-    padding-top: 130%; /* Tall aspect ratio for elevators */
+    padding-top: 130%;
+    /* Tall aspect ratio for elevators */
     overflow: hidden;
 }
 
@@ -5664,14 +5712,14 @@ button.read-more {
     width: 140px;
     height: 140px;
     border: 8px solid #eef2f8;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     background-color: #eef2f8;
     transition: border-color 0.4s ease;
 }
 
 .testimonial-avatar-cell.is-selected .testimonial-avatar-img {
     border-color: #fff;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* Flickity Buttons for avatar carousel */
@@ -5681,7 +5729,7 @@ button.read-more {
 }
 
 .testimonial-avatar-carousel .flickity-button:hover {
-    background: rgba(62,104,150,0.08);
+    background: rgba(62, 104, 150, 0.08);
 }
 
 .testimonial-avatar-carousel .flickity-prev-next-button {
@@ -5707,7 +5755,7 @@ button.read-more {
     .project-page-img-wrap {
         padding-top: 100%;
     }
-    
+
     .testimonial-avatar-img {
         width: 100px;
         height: 100px;
@@ -5736,7 +5784,8 @@ button.read-more {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll; /* Use scroll or fixed if needed */
+    background-attachment: scroll;
+    /* Use scroll or fixed if needed */
 }
 
 .contact-hero-overlay {
@@ -5752,7 +5801,7 @@ button.read-more {
 
 .contact-desc {
     font-size: 16px;
-    color: rgba(255,255,255,0.9);
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .contact-hotline-btn {
@@ -5782,7 +5831,7 @@ button.read-more {
 .contact-form-box {
     max-width: 850px;
     padding: 2.5rem 4rem 3.5rem;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     border-radius: 4px;
 }
@@ -5792,7 +5841,8 @@ button.read-more {
     height: 60px;
     background: #0056a8;
     border-radius: 50%;
-    margin-top: -30px; /* pull up out of box */
+    margin-top: -30px;
+    /* pull up out of box */
 }
 
 /* CF7 Material Styling */
@@ -5803,16 +5853,16 @@ button.read-more {
     justify-content: center;
 }
 
-.contact-cf7-wrap .wpcf7-form > p {
+.contact-cf7-wrap .wpcf7-form>p {
     margin: 0;
     width: 100%;
 }
 
 /* Force 2 column layout if inputs are wrapped in standard p tags */
-.contact-cf7-wrap .wpcf7-form > p:nth-child(1),
-.contact-cf7-wrap .wpcf7-form > p:nth-child(2),
-.contact-cf7-wrap .wpcf7-form > p:nth-child(3),
-.contact-cf7-wrap .wpcf7-form > p:nth-child(4) {
+.contact-cf7-wrap .wpcf7-form>p:nth-child(1),
+.contact-cf7-wrap .wpcf7-form>p:nth-child(2),
+.contact-cf7-wrap .wpcf7-form>p:nth-child(3),
+.contact-cf7-wrap .wpcf7-form>p:nth-child(4) {
     width: calc(50% - 15px);
 }
 
@@ -5872,14 +5922,14 @@ button.read-more {
 }
 
 /* Cam kết text (if added via CF7, style appropriately. Otherwise handled by center alignment) */
-.contact-cf7-wrap .wpcf7-form > p:nth-last-child(2) {
+.contact-cf7-wrap .wpcf7-form>p:nth-last-child(2) {
     text-align: center;
     color: #0056a8;
     font-size: 14px;
     margin-top: 10px;
 }
 
-.contact-cf7-wrap .wpcf7-form > p:last-child {
+.contact-cf7-wrap .wpcf7-form>p:last-child {
     display: flex;
     justify-content: center;
     width: 100%;
@@ -5903,11 +5953,37 @@ button.read-more {
     .contact-form-box {
         padding: 2rem 1.5rem 2.5rem;
     }
-    
-    .contact-cf7-wrap .wpcf7-form > p:nth-child(1),
-    .contact-cf7-wrap .wpcf7-form > p:nth-child(2),
-    .contact-cf7-wrap .wpcf7-form > p:nth-child(3),
-    .contact-cf7-wrap .wpcf7-form > p:nth-child(4) {
+
+    .contact-cf7-wrap .wpcf7-form>p:nth-child(1),
+    .contact-cf7-wrap .wpcf7-form>p:nth-child(2),
+    .contact-cf7-wrap .wpcf7-form>p:nth-child(3),
+    .contact-cf7-wrap .wpcf7-form>p:nth-child(4) {
         width: 100%;
     }
-}
+}
+
+/* ===================================
+   Title with Orange Underline
+   =================================== */
+h2.title-with-line {
+    font-size: 32px;
+    position: relative;
+    padding-bottom: 16px;
+}
+
+h2.title-with-line::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 145px;
+    height: 3px;
+    background-color: #d97539;
+}
+
+@media (max-width: 767px) {
+    h2.title-with-line {
+        font-size: 24px;
+    }
+}

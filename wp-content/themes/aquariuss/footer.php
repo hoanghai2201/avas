@@ -10,7 +10,7 @@ global $domain;
 
 </main><!-- #main -->
 
-<footer class="text-white">
+<footer class="footer-wrapper">
 	<?php
 		get_template_part('template-parts/footer/footer');
 	?>

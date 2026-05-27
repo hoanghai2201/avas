@@ -26,10 +26,10 @@ global $domain;
             <div class="carousel-cell w-100 position-relative">
                 <img src="<?php echo esc_url($image['url']); ?>" class="w-100 obj-fit-cover d-block" alt="<?php echo esc_attr($image['alt']); ?>" style="min-height: 400px; height: 100vh;">
                 <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(16,42,80,0.8) 0%, rgba(16,42,80,0.4) 50%, rgba(0,0,0,0) 100%);"></div>
-                <div class="slider-content position-absolute top-50 translate-middle-y text-white px-3 px-md-5" style="left: 0; max-width: 800px;">
+                <div class="slider-content position-absolute top-50 translate-middle-y text-white px-3 px-md-5" style="left: 0; max-width: 620px;">
                     <div class="ps-md-5 ms-md-4">
-                        <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 60px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
-                        <p class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo nl2br(esc_html($desc)); ?></p>
+                        <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 45px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
+                        <div class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo wp_kses_post($desc); ?></div>
                         <?php if($link): ?>
                         <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #d97539; border: none; font-size: 16px;">
                             Hotline <?php echo get_option('site_phone_number'); ?>
@@ -63,7 +63,7 @@ global $domain;
                     <?php echo wpautop(get_field('sec2_desc')); ?>
                 </div>
                 
-                <div class="row text-center mb-5 sec2-stats g-2 g-md-0 mt-4">
+                <div class="row mb-5 sec2-stats g-2 g-md-0 mt-4">
                     <div class="col-6 col-md-3 border-md-end mb-3 mb-md-0">
                         <h3 class="fw-bold text-blue mb-1" style="color: #3e6896; font-size: clamp(30px, 4vw, 40px);"><?php echo get_field('sec2_num1'); ?></h3>
                         <p class="small text-dark fw-medium mb-0">Dự án hoàn thành</p>
@@ -93,14 +93,16 @@ global $domain;
 </section>
 
 <!-- Section 3: Services -->
-<section id="section-3" class="py-5" style="background: linear-gradient(135deg, #102a50 0%, #1a427d 100%);">
+<?php 
+$sec3_bg_image = get_field('sec3_bg'); 
+?>
+<section id="section-3" class="py-5" style="background: url('<?php echo esc_url($sec3_bg_image['url']); ?>') no-repeat center center;background-size: 100% 100%;">
     <div class="container py-4 py-md-5">
-        <h2 class="text-white text-uppercase fw-bold mb-5 pb-3 text-center text-md-start title-with-line" data-aos="fade-up" style="font-size: 32px; position: relative;">
+        <h2 class="text-white text-uppercase fw-bold mb-5 text-center text-md-start title-with-line" data-aos="fade-up">
             <?php echo get_field('sec3_title'); ?>
-            <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #d97539;"></span>
         </h2>
         
-        <div class="row g-4 g-lg-5 pt-4">
+        <div class="row g-3 pt-4">
             <?php
             if(have_rows('list_services')):
                 while(have_rows('list_services')) : the_row();
@@ -109,10 +111,10 @@ global $domain;
                     $desc = get_sub_field('desc');
                     $link = get_sub_field('link');
             ?>
-            <div class="col-lg-3 col-md-6 pt-5 pt-md-0 mt-5 mt-md-4" data-aos="fade-up">
+            <div class="col-lg-3 col-md-6 mt-5" data-aos="fade-up">
                 <div class="service-card bg-white px-3 pb-4 text-center position-relative h-100 d-flex flex-column" style="border-radius: 0; margin-top: 40px;">
                     <div class="service-icon-wrap position-absolute start-50 translate-middle" style="top: 0;">
-                        <div class="service-icon bg-orange rounded-circle d-flex align-items-center justify-content-center border border-4 border-white" style="width: 90px; height: 90px; background-color: #d97539; box-shadow: 0 0 0 4px #d97539;">
+                        <div class="service-icon bg-orange rounded-circle d-flex align-items-center justify-content-center border border-8 border-white" style="width: 95px; height: 95px; background-color: #d97539;">
                             <img src="<?php echo esc_url($image_pc['url']); ?>" alt="<?php echo esc_attr($image_pc['alt']); ?>" style="max-width: 45px; max-height: 45px; filter: brightness(0) invert(1);">
                         </div>
                     </div>
@@ -136,14 +138,13 @@ global $domain;
 </section>
 
 <!-- Section 4: Solutions -->
-<section id="section-4" class="py-5" style="background-color: #e6e7e8;">
+<section id="section-4" class="py-5" style="background-color: #fff;">
     <div class="container py-4 py-md-5">
-        <h2 class="text-uppercase fw-bold text-blue mb-5 pb-3 text-center text-md-start title-with-line" style="color: #3e6896; font-size: 32px; position: relative;" data-aos="fade-up">
+        <h2 class="text-uppercase fw-bold text-blue mb-5 text-center text-md-start title-with-line" data-aos="fade-up">
             <?php echo get_field('sec4_title'); ?>
-            <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #d97539;"></span>
         </h2>
         
-        <div class="row g-4">
+        <div class="row g-3">
             <?php
             $sec4_solutions = get_field('sec4_solutions');
             if($sec4_solutions):
@@ -153,7 +154,7 @@ global $domain;
             <div class="col-lg-3 col-md-6" data-aos="fade-up">
                 <div class="solution-card bg-white h-100 shadow-sm border border-light p-2">
                     <a href="<?php the_permalink(); ?>" class="d-block overflow-hidden">
-                        <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'medium_large'); ?>" class="w-100 obj-fit-cover" style="height: 200px;" alt="<?php the_title(); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url($post->ID, 'medium_large'); ?>" class="w-100 obj-fit-cover" style="height: 300px;" alt="<?php the_title(); ?>">
                     </a>
                     <div class="p-3 text-center">
                         <h6 class="text-uppercase fw-bold text-blue mb-2" style="color: #3e6896; font-size: 14px;">
@@ -172,35 +173,48 @@ global $domain;
     </div>
 </section>
 
+<?php 
+$sec5_bg = get_field('sec5_bg'); 
+$sec5_image = get_field('sec5_image'); 
+?>
 <!-- Section 5: Capabilities -->
-<section id="section-5" class="py-0 position-relative bg-blue-dark overflow-hidden" style="background-color: #102a50;">
-    <div class="row g-0">
-        <div class="col-lg-6 position-relative z-1">
-            <?php $sec5_image = get_field('sec5_image'); if($sec5_image): ?>
-                <div class="h-100 w-100 sec5-img-wrap">
-                    <img src="<?php echo esc_url($sec5_image['url']); ?>" class="w-100 h-100 obj-fit-cover d-block" style="min-height: 400px;" alt="<?php echo esc_attr($sec5_image['alt']); ?>">
-                </div>
-            <?php endif; ?>
-        </div>
-        <div class="col-lg-6 text-white p-4 p-md-5 d-flex flex-column justify-content-center position-relative z-2 sec5-content-wrap">
-            <div class="px-md-4 py-4 py-md-5 text-center text-md-start">
-                <h2 class="text-uppercase fw-bold mb-3" style="font-size: clamp(28px, 3vw, 36px);"><?php echo get_field('sec5_title'); ?></h2>
-                <div class="mb-5" style="font-size: 15px; line-height: 1.8; opacity: 0.9;">
+<section id="section-5" class="py-0 position-relative overflow-hidden" style="background-color: #102a50; min-height: 500px;">
+    
+    <!-- Lớp 1: Ảnh thực tế nằm dưới cùng bên trái -->
+    <?php if($sec5_image): ?>
+        <img src="<?php echo esc_url($sec5_image['url']); ?>" class="position-absolute top-0 start-0 h-100 obj-fit-cover" style="width: 55%; z-index: 0;" alt="<?php echo esc_attr($sec5_image['alt']); ?>">
+    <?php endif; ?>
+
+    <!-- Lớp 2: Ảnh nền (đã đục lỗ) đè lên toàn bộ section -->
+    <?php if($sec5_bg): ?>
+        <div class="position-absolute top-0 start-0 w-100 h-100" style="background: url('<?php echo esc_url($sec5_bg['url']); ?>') no-repeat left center; background-size: 100% 100%; z-index: 1; pointer-events: none;"></div>
+    <?php endif; ?>
+
+    <!-- Lớp 3: Row chứa nội dung -->
+    <div class="row g-0 position-relative w-100 h-100" style="z-index: 2;">
+        <!-- Cột trái rỗng để giữ layout lưới (grid) -->
+        <div class="col-lg-6 d-none d-lg-block"></div>
+        
+        <!-- Cột phải chứa nội dung text -->
+        <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center sec5-content-wrap">
+            <div class="px-md-2 py-4 py-md-5 text-center">
+                <h2 class="text-uppercase fw-bold mb-3" style="color:#fff; font-size: clamp(28px, 3vw, 36px);"><?php echo get_field('sec5_title'); ?></h2>
+                <div class="mb-5 px-lg-5 text-white" style="font-size: 16px; line-height: 1.6; opacity: 0.9;">
                     <?php echo wpautop(get_field('sec5_desc')); ?>
                 </div>
                 
-                <div class="row text-center justify-content-center justify-content-md-start mb-5 g-4">
+                <div class="d-flex flex-wrap justify-content-center gap-3 gap-md-4 mb-5">
                     <?php
                     if(have_rows('capacitys')):
                         while(have_rows('capacitys')) : the_row();
                             $icon = get_sub_field('icon');
                             $title = get_sub_field('title');
                     ?>
-                    <div class="col-4 col-sm-3 px-2">
-                        <div class="capability-icon bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 80px; height: 80px;">
-                            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($title); ?>" style="max-width: 40px; max-height: 40px;">
+                    <div class="text-center">
+                        <div class="capability-icon bg-white rounded-circle d-flex flex-column align-items-center justify-content-center shadow mx-auto" style="width: 140px; height: 140px;">
+                            <img src="<?php echo esc_url($icon['url']); ?>" alt="<?php echo esc_attr($title); ?>" style="max-width: 45px; max-height: 45px; margin-bottom: 8px;">
+                            <p class="small capacity-title fw-bold text-uppercase px-3 mb-0 text-center" style="font-size: 12px; color: #102a50; line-height: 1.3;"><?php echo esc_html($title); ?></p>
                         </div>
-                        <p class="small fw-bold text-uppercase px-1 mb-0" style="font-size: 13px; color: #3e6896;"><?php echo esc_html($title); ?></p>
                     </div>
                     <?php
                         endwhile;
@@ -208,13 +222,16 @@ global $domain;
                     ?>
                 </div>
                 
-                <div class="mb-5 d-flex gap-3 align-items-start justify-content-center justify-content-md-start text-start">
-                    <span style="font-size: 50px; color: #fff; line-height: 0.8; font-family: serif; opacity: 0.8;">&ldquo;</span>
-                    <p class="mb-0 fst-italic fw-medium pt-2" style="font-size: clamp(18px, 2vw, 22px);"><?php echo get_field('slogan'); ?></p>
+                <div class="mb-5 d-flex justify-content-center">
+                    <div class="position-relative text-white px-4" style="max-width: 85%;">
+                        <span class="position-absolute start-0" style="top: -15px; font-size: 60px; color: #fff; line-height: 1; font-family: Georgia, serif;">&ldquo;</span>
+                        <p class="mb-0 fw-medium text-center" style="font-size: clamp(18px, 2vw, 24px);"><?php echo get_field('slogan'); ?></p>
+                        <span class="position-absolute end-0" style="bottom: -35px; font-size: 60px; color: #fff; line-height: 1; font-family: Georgia, serif;">&rdquo;</span>
+                    </div>
                 </div>
                 
                 <?php $sec5_readmore = get_field('sec5_readmore'); if($sec5_readmore): ?>
-                    <div class="text-center">
+                    <div class="text-center mt-5">
                         <a href="<?php echo get_permalink($sec5_readmore->ID); ?>" class="btn text-white px-5 py-2 fw-bold text-uppercase rounded-0" style="background-color: #d97539;">XEM THÊM</a>
                     </div>
                 <?php endif; ?>
@@ -226,9 +243,8 @@ global $domain;
 <!-- Section 6: Projects -->
 <section id="section-6" class="py-5 bg-white">
     <div class="container py-4 py-md-5">
-        <h2 class="text-uppercase fw-bold text-blue mb-5 pb-3 text-center text-md-start title-with-line" style="color: #3e6896; font-size: 32px; position: relative;" data-aos="fade-up">
+        <h2 class="text-uppercase fw-bold text-blue mb-5 text-center text-md-start title-with-line" data-aos="fade-up">
             <?php echo get_field('sec6_title'); ?>
-            <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #d97539;"></span>
         </h2>
         
         <div class="carousel project-carousel js-flickity" data-flickity='{ "cellAlign": "left", "wrapAround": true, "pageDots": false, "groupCells": 1 }'>
@@ -247,7 +263,7 @@ global $domain;
             <div class="carousel-cell px-3">
                 <div class="project-card">
                     <a href="<?php the_permalink(); ?>" class="d-block mb-3">
-                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-100 obj-fit-cover" style="height: 380px;" alt="<?php the_title(); ?>">
+                        <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-100 obj-fit-cover" style="height: 480px;" alt="<?php the_title(); ?>">
                     </a>
                     <h6 class="text-uppercase fw-bold text-blue mb-1" style="color: #3e6896; font-size: 15px;">
                         <a href="<?php the_permalink(); ?>" class="text-decoration-none" style="color: inherit;"><?php the_title(); ?></a>
@@ -275,9 +291,8 @@ global $domain;
 <!-- Section 7: News -->
 <section id="section-7" class="py-5 bg-white">
     <div class="container pb-4 pb-md-5">
-        <h2 class="text-uppercase fw-bold text-blue mb-5 pb-3 text-center text-md-start title-with-line" style="color: #3e6896; font-size: 30px; position: relative;" data-aos="fade-up">
+        <h2 class="text-uppercase fw-bold text-blue mb-5 text-center text-md-start title-with-line" data-aos="fade-up">
             <?php echo get_field('sec7_title'); ?>
-            <span style="position: absolute; bottom: 0; left: 0; width: 60px; height: 3px; background-color: #d97539;"></span>
         </h2>
         
         <div class="row g-4 mt-2">
@@ -287,14 +302,16 @@ global $domain;
                 $main_news = $sec7_news[0];
             ?>
             <div class="col-lg-6" data-aos="fade-up">
-                <div class="main-news-card bg-white h-100 border" style="border-color: #eaeaea;">
-                    <a href="<?php echo get_permalink($main_news->ID); ?>">
-                        <img src="<?php echo get_the_post_thumbnail_url($main_news->ID, 'large'); ?>" class="w-100 obj-fit-cover" style="height: 340px;" alt="<?php echo get_the_title($main_news->ID); ?>">
+                <div class="main-news-card bg-white border d-flex flex-column" style="border-color: #eaeaea;">
+                    <a href="<?php echo get_permalink($main_news->ID); ?>" class="d-block overflow-hidden flex-shrink-0">
+                        <img src="<?php echo get_the_post_thumbnail_url($main_news->ID, 'large'); ?>" class="w-100 h-auto obj-fit-cover" alt="<?php echo get_the_title($main_news->ID); ?>">
                     </a>
-                    <div class="p-4">
+                    <div class="p-4 flex-grow-1">
                         <h5 class="fw-bold mb-3" style="font-size: 18px;"><a href="<?php echo get_permalink($main_news->ID); ?>" class="text-decoration-none text-dark"><?php echo get_the_title($main_news->ID); ?></a></h5>
-                        <p class="text-dark mb-4 fs-14" style="line-height: 1.6;"><?php echo wp_trim_words(get_the_excerpt($main_news->ID), 30); ?></p>
-                        <a href="<?php echo get_permalink($main_news->ID); ?>" class="btn text-white px-4 py-2 rounded-0 fw-medium" style="background-color: #3e6896; font-size: 13px;">ĐỌC THÊM</a>
+                        <p class="text-dark mb-3 fs-14" style="line-height: 1.6;"><?php echo wp_trim_words(get_the_excerpt($main_news->ID), 30); ?></p>
+                        <div>
+                            <a href="<?php echo get_permalink($main_news->ID); ?>" class="btn text-white px-4 py-2 rounded-0 fw-medium" style="background-color: #3e6896; font-size: 13px;">ĐỌC THÊM</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -305,9 +322,9 @@ global $domain;
                     for($i = 1; $i < min(3, count($sec7_news)); $i++):
                         $sub_news = $sec7_news[$i];
                     ?>
-                    <div class="sub-news-card bg-white d-flex border" style="height: 230px; border-color: #eaeaea;">
-                        <div class="w-50 h-100">
-                            <a href="<?php echo get_permalink($sub_news->ID); ?>" class="d-block h-100">
+                    <div class="sub-news-card bg-white d-flex flex-grow-1 border overflow-hidden" style="border-color: #eaeaea; min-height: 0;">
+                        <div class="w-50 position-relative h-100">
+                            <a href="<?php echo get_permalink($sub_news->ID); ?>" class="d-block h-100 w-100 overflow-hidden position-absolute top-0 start-0">
                                 <img src="<?php echo get_the_post_thumbnail_url($sub_news->ID, 'medium'); ?>" class="w-100 h-100 obj-fit-cover" alt="<?php echo get_the_title($sub_news->ID); ?>">
                             </a>
                         </div>
@@ -328,32 +345,34 @@ global $domain;
 </section>
 
 <!-- Section 8: Testimonials & Sponsors -->
-<section id="section-8" class="py-5" style="background: linear-gradient(135deg, #102a50 0%, #1a427d 100%); min-height: 600px;">
+<?php $sec8_bg = get_field('sec8_bg'); ?>
+<section id="section-8" class="py-5 position-relative" style="<?php if($sec8_bg): ?>background: url('<?php echo esc_url($sec8_bg['url']); ?>') no-repeat center center; background-size: 100% 100%;<?php else: ?>background: linear-gradient(135deg, #102a50 0%, #1a427d 100%);<?php endif; ?> min-height: 600px;">
     <div class="container py-4 py-md-5">
-        <div class="row mb-5 align-items-center">
-            <div class="col-lg-4 text-white pe-lg-5 mb-5 mb-lg-0 text-center text-md-start" data-aos="fade-up">
-                <h2 class="text-uppercase fw-bold mb-4" style="font-size: 32px;"><?php echo get_field('sec8_title'); ?></h2>
-                <div style="font-size: 14px; line-height: 1.6; opacity: 0.85;">
+        <div class="row align-items-start g-4 g-lg-5">
+            <!-- Left: Title + Desc -->
+            <div class="col-lg-5 text-white mb-3 mb-lg-0 text-center text-md-start" data-aos="fade-up">
+                <h2 class="text-uppercase fw-bold mb-4" style="font-size: clamp(26px, 3vw, 38px); line-height: 1.15;"><?php echo get_field('sec8_title'); ?></h2>
+                <div style="font-size: 14px; line-height: 1.8; opacity: 0.85;">
                     <?php echo wpautop(get_field('sec8_desc')); ?>
                 </div>
             </div>
-            <div class="col-lg-8" data-aos="fade-up" data-aos-delay="100">
-                <div class="row g-4">
+
+            <!-- Right: 2 Testimonial Cards -->
+            <div class="col-lg-7" data-aos="fade-up" data-aos-delay="100">
+                <div class="row g-3">
                     <?php
                     if(have_rows('sec8_rate')):
                         while(have_rows('sec8_rate')) : the_row();
                     ?>
                     <div class="col-md-6">
-                        <div class="testimonial-card bg-white p-4 p-md-5 h-100 position-relative d-flex flex-column" style="border-radius: 0;">
-                            <div class="quote-icon position-absolute top-0 start-0 ms-4 mt-3" style="color: #102a50; font-size: 50px; font-family: Georgia, serif; line-height: 1;">
-                                &ldquo;
-                            </div>
-                            <div class="mt-4 mb-4 text-dark pt-4" style="font-size: 13px; line-height: 1.6; font-weight: 500;">
+                        <div class="testimonial-card bg-white p-4 h-100 d-flex flex-column position-relative" style="border-radius: 0;">
+                            <div class="mb-3" style="color: #102a50; font-size: 48px; font-family: Georgia, serif; line-height: 0.8;">&ldquo;</div>
+                            <div class="flex-grow-1 text-dark mb-3" style="font-size: 13px; line-height: 1.7;">
                                 <?php echo wpautop(get_sub_field('desc')); ?>
                             </div>
-                            <div class="text-end mt-auto pt-4">
-                                <h6 class="mb-1 text-dark fw-bold" style="font-size: 13px;"><?php echo esc_html(get_sub_field('customer_name')); ?></h6>
-                                <p class="small text-dark mb-0" style="font-size: 12px;"><?php echo esc_html(get_sub_field('position')); ?></p>
+                            <div class="text-end border-top pt-3 mt-auto">
+                                <p class="mb-0 fw-bold text-dark" style="font-size: 13px;"><?php echo esc_html(get_sub_field('customer_name')); ?></p>
+                                <p class="mb-0 text-muted" style="font-size: 12px;"><?php echo esc_html(get_sub_field('position')); ?></p>
                             </div>
                         </div>
                     </div>
@@ -364,9 +383,10 @@ global $domain;
                 </div>
             </div>
         </div>
-        
-        <div class="row justify-content-center mt-5 pt-3 pt-md-5">
-            <div class="col-12 text-center d-flex flex-wrap justify-content-center gap-2 gap-md-3">
+
+        <!-- Sponsors Row -->
+        <div class="row mt-5 pt-3">
+            <div class="col-12 d-flex flex-wrap justify-content-end gap-2 gap-md-3">
                 <?php
                 if(have_rows('sec8_sponsors')):
                     while(have_rows('sec8_sponsors')) : the_row();
