@@ -3315,7 +3315,7 @@ button.read-more {
 
     .card-body {
         padding: 10px 15px 0;
-        width: calc(100% - 130px);
+        width: 100%;
         float: right;
     }
 
@@ -3365,7 +3365,7 @@ button.read-more {
         width: 100%;
         border-right: 0;
         border-left: 0;
-        top: 96px;
+        top: 75px;
     }
 
     .offcanvas-body {
@@ -4127,6 +4127,9 @@ button.read-more {
         background-size: cover !important;
         padding-bottom: 50px !important;
     }
+    .mmt-0 {
+        margin-top: 0 !important;
+    }
     .mmb-0 {
         margin-bottom: 0 !important;
     }
@@ -4139,15 +4142,25 @@ button.read-more {
     .text-md-start {
         text-align: left!important;
     }
+    .pm-0 {
+        padding: 0 !important;
+    }
     h2.title-with-line {
         padding-bottom: 8px;
         margin-bottom: 20px !important;
+    }
+    .hidden-mobile {
+        display: none;
+    }
+    .testimonial-end {
+        bottom: unset !important;
+        margin-top: -15px !important;
     }
     #section-5 .position-absolute {
         background: url('/wp-content/uploads/2026/05/Clip-path-group-5.jpg') no-repeat left center !important;
         background-size: unset !important;
     }
-    .position-absolute {
+    .position-absolute:not(.slider-content) {
         width: 100% !important;
         position: relative !important;
     }
@@ -5999,6 +6012,7 @@ button.read-more {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     position: relative;
     border-radius: 4px;
+    padding-top: 60px;
 }
 
 .contact-icon-circle {
@@ -6010,25 +6024,10 @@ button.read-more {
     /* pull up out of box */
 }
 
-/* CF7 Material Styling */
+/* CF7 form reset - layout handled by .form-contact-page */
 .contact-cf7-wrap .wpcf7-form {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.contact-cf7-wrap .wpcf7-form>p {
-    margin: 0;
-    width: 100%;
-}
-
-/* Force 2 column layout if inputs are wrapped in standard p tags */
-.contact-cf7-wrap .wpcf7-form>p:nth-child(1),
-.contact-cf7-wrap .wpcf7-form>p:nth-child(2),
-.contact-cf7-wrap .wpcf7-form>p:nth-child(3),
-.contact-cf7-wrap .wpcf7-form>p:nth-child(4) {
-    width: calc(50% - 15px);
+    display: block;
+    box-shadow: none !important;
 }
 
 .contact-cf7-wrap .wpcf7-form-control-wrap {
@@ -6087,17 +6086,135 @@ button.read-more {
 }
 
 /* Cam kết text (if added via CF7, style appropriately. Otherwise handled by center alignment) */
-.contact-cf7-wrap .wpcf7-form>p:nth-last-child(2) {
+.contact-cf7-wrap .wpcf7-form > p:nth-last-child(2) {
     text-align: center;
     color: #0056a8;
     font-size: 14px;
     margin-top: 10px;
 }
 
-.contact-cf7-wrap .wpcf7-form>p:last-child {
+.contact-cf7-wrap .wpcf7-form > p:last-child {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+/* ============================================
+   FORM-CONTACT (New DOM structure)
+   ============================================ */
+
+/* Intro text */
+.form-contact-page > p:first-of-type {
+    text-align: center;
+    color: #0b4e8c;
+    font-size: 15px;
+    margin-bottom: 28px;
+}
+
+/* Cam ket text */
+.form-contact-page > p:nth-last-of-type(2) {
+    text-align: center;
+    color: #0b4e8c;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0 0;
+}
+
+/* Submit wrapper */
+.form-contact-page > p:last-of-type {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 2-column row */
+.form-contact-page .row-input {
+    display: flex;
+    gap: 20px;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.form-contact-page .item-input,
+.form-contact-page .item-area {
+    flex: 1;
+    min-width: 0;
+}
+
+.form-contact-page .item-input p,
+.form-contact-page .item-area p {
+    margin: 0;
+}
+
+/* Inputs & Textarea */
+.form-contact-page .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+}
+
+.form-contact-page input[type="text"],
+.form-contact-page input[type="email"],
+.form-contact-page input[type="tel"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    padding: 10px 0;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    box-shadow: none !important;
+    outline: none !important;
+    transition: border-color 0.3s;
+}
+
+.form-contact-page textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    padding: 10px 0;
+    background: transparent;
+    font-size: 14px;
+    color: #333;
+    box-shadow: none !important;
+    outline: none !important;
+    resize: none;
+    height: 45px;
+    transition: border-color 0.3s;
+}
+
+.form-contact-page input:focus,
+.form-contact-page textarea:focus {
+    border-bottom-color: #0b4e8c;
+}
+
+.form-contact-page input::placeholder,
+.form-contact-page textarea::placeholder {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Submit Button */
+.form-contact-page .wpcf7-submit,
+.form-contact-page .submit-form {
+    background: #0b4e8c;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.3s;
+    text-transform: uppercase;
+}
+
+.form-contact-page .wpcf7-submit:hover,
+.form-contact-page .submit-form:hover {
+    background: #d97539;
 }
 
 /* Map Section */
@@ -6116,7 +6233,11 @@ button.read-more {
 /* Mobile responsive */
 @media (max-width: 767px) {
     .contact-form-box {
-        padding: 2rem 1.5rem 2.5rem;
+        padding: 3rem 1.5rem 2.5rem;
+    }
+    .form-contact-page .row-input {
+        gap: 0px;
+        flex-direction: column;
     }
 
     .contact-cf7-wrap .wpcf7-form>p:nth-child(1),

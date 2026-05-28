@@ -53,12 +53,11 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 </section>
 
 <!-- Section 2: Projects List -->
-<section id="section-2" class="py-5" style="background-color: #e5e5e5;">
+<section id="section-2" class="py-5" style="background-color: #fff;">
     <div class="container py-4">
-        
         <!-- Title Bar -->
-        <div class="d-flex align-items-center mb-5" data-aos="fade-up">
-            <h2 class="mb-0 text-uppercase fw-bold" style="font-size: clamp(24px, 3vw, 36px); color: #3e6896;">
+        <div class="d-flex align-items-center mb-3" data-aos="fade-up">
+            <h2 class="text-uppercase fw-bold mmb-1" style="font-size: clamp(24px, 3vw, 36px); color: #3e6896;">
                 DỰ ÁN NỔI BẬT
             </h2>
         </div>
@@ -140,7 +139,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 </section>
 
 <!-- Section 3: Testimonials -->
-<section id="section-3" class="py-5" style="background-color: #e3e3e3; padding-bottom: 6rem !important;">
+<section id="section-3" class="py-5" style="background-color: #fff; padding-bottom: 6rem !important;">
     <div class="container py-4">
         <?php
         $testimonials = [];
@@ -183,7 +182,7 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
             </div>
 
             <!-- Bottom Right Quote -->
-            <div class="position-absolute" style="bottom: 120px; right: 0; color: #222;">
+            <div class="position-absolute testimonial-end" style="bottom: 200px; right: 0; color: #222;">
                 <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
             </div>
 

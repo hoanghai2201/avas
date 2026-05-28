@@ -33,7 +33,7 @@ $map = get_field('map');
                 <?php endif; ?>
                 
                 <?php if($hotline): ?>
-                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline)); ?>" class="contact-hotline-btn">
+                    <a href="tel:<?php echo esc_attr(preg_replace('/[^0-9]/', '', $hotline)); ?>" class="contact-hotline-btn mmt-1">
                         <?php echo esc_html($hotline); ?>
                     </a>
                 <?php endif; ?>
@@ -41,7 +41,7 @@ $map = get_field('map');
 
             <!-- Contact Form Box -->
             <div class="contact-form-container mx-auto">
-                <div class="contact-form-box bg-white mx-auto">
+                <div class="contact-form-box bg-white mx-auto mmt-2">
                     
                     <!-- Icon top -->
                     <div class="contact-icon-wrap text-center">
