@@ -48,7 +48,7 @@ global $domain;
 </section>
 
 <!-- Section 2: QUY TRÌNH LÀM VIỆC -->
-<section id="section-2" class="py-5" style="background-color: #e5e5e5;">
+<section id="section-2" class="py-5" style="background-color: #fff;">
     <div class="container py-4">
         <div class="text-center mb-5">
             <h2 class="text-uppercase fw-bold text-blue mb-3" style="color: #3e6896; font-size: 32px;" data-aos="fade-up">
@@ -97,7 +97,7 @@ global $domain;
                 <div class="col px-2">
                     <?php if($is_odd): ?>
                         <!-- Icon High -->
-                        <div class="process-icon-wrap mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 80px; height: 80px; background-color: #3e6896; border: 5px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1);" data-aos="zoom-in" data-aos-delay="<?php echo $index * 100; ?>">
+                        <div class="process-icon-wrap mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 80px; height: 80px; background-color: #3e6896; " data-aos="zoom-in" data-aos-delay="<?php echo $index * 100; ?>">
                             <?php if($icon): ?>
                                 <img src="<?php echo esc_url($icon['url']); ?>" alt="icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1); object-fit: contain;">
                             <?php endif; ?>
@@ -114,7 +114,7 @@ global $domain;
                             <div class="small text-muted" style="font-size: 13px; line-height: 1.5; text-align: center;"><?php echo wpautop($desc); ?></div>
                         </div>
                         <!-- Icon Low -->
-                        <div class="process-icon-wrap mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 80px; height: 80px; background-color: #3e6896; border: 5px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); margin-top: 18px;" data-aos="zoom-in" data-aos-delay="<?php echo $index * 100; ?>">
+                        <div class="process-icon-wrap mx-auto d-flex align-items-center justify-content-center rounded-circle" style="width: 80px; height: 80px; background-color: #3e6896;  margin-top: 18px;" data-aos="zoom-in" data-aos-delay="<?php echo $index * 100; ?>">
                             <?php if($icon): ?>
                                 <img src="<?php echo esc_url($icon['url']); ?>" alt="icon" style="width: 35px; height: 35px; filter: brightness(0) invert(1); object-fit: contain;">
                             <?php endif; ?>
@@ -158,7 +158,7 @@ global $domain;
 </section>
 
 <!-- Section 3: SẢN PHẨM DỊCH VỤ -->
-<section id="section-3" class="py-5" style="background-color: #f8f9fa;">
+<section id="section-3" class="py-5" style="background-color: #fff;">
     <div class="container py-4">
         <div class="text-center mb-5">
             <h2 class="text-uppercase fw-bold text-blue mb-3" style="color: #3e6896; font-size: 32px;" data-aos="fade-up">
@@ -169,7 +169,7 @@ global $domain;
             </div>
         </div>
 
-        <div class="row g-4 mt-2">
+        <div class="row g-4 mt-2 g-4 g-lg-5">
             <?php
             $args = array(
                 'post_type' => 'post',
@@ -221,7 +221,7 @@ global $domain;
 </section>
 
 <!-- Section 4: PHƯƠNG CHÂM HOẠT ĐỘNG -->
-<section id="section-4" class="py-5" style="background-color: #e5e5e5; padding-bottom: 5rem !important;">
+<section id="section-4" class="py-5" style="background-color: #fff; padding-bottom: 5rem !important;">
     <div class="container py-4">
         <div class="text-center mb-5">
             <h2 class="text-uppercase fw-bold text-blue mb-3" style="color: #3e6896; font-size: 32px;" data-aos="fade-up">
@@ -249,7 +249,7 @@ global $domain;
                     <?php endif; ?>
                 </div>
                 <h4 class="fw-bold text-uppercase mb-3" style="font-size: 18px; color: #1a1a1a;"><?php echo esc_html($title); ?></h4>
-                <div class="text-dark small mx-auto" style="font-size: 14px; line-height: 1.6; max-width: 90%;">
+                <div class="text-dark small mx-auto w-50" style="font-size: 14px; line-height: 1.6; max-width: 90%;">
                     <?php echo wpautop($desc); ?>
                 </div>
             </div>

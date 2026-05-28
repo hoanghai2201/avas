@@ -56,7 +56,7 @@ global $domain;
                     <img src="<?php echo esc_url($sec2_image['url']); ?>" alt="<?php echo esc_attr($sec2_image['alt']); ?>" class="img-fluid sec2-img-custom">
                 <?php endif; ?>
             </div>
-            <div class="col-lg-7 ps-lg-5">
+            <div class="col-lg-7 ps-lg-5 mmt-2">
                 <h3 class="text-uppercase fw-bold text-blue mb-1" style="color: #3e6896; font-size: clamp(24px, 3vw, 32px);"><?php echo get_field('sec2_title1'); ?></h3>
                 <h2 class="text-uppercase fw-bold text-orange mb-4" style="color: #d97539; font-size: clamp(28px, 4vw, 40px);"><?php echo get_field('sec2_title2'); ?></h2>
                 <div class="mb-4 text-dark fs-14 fw-normal" style="line-height: 1.7; text-align: justify;">
@@ -111,16 +111,16 @@ $sec3_bg_image = get_field('sec3_bg');
                     $desc = get_sub_field('desc');
                     $link = get_sub_field('link');
             ?>
-            <div class="col-lg-3 col-md-6 mt-5" data-aos="fade-up">
+            <div class="col-lg-3 col-md-6 mt-5 mmt-6" data-aos="fade-up">
                 <div class="service-card bg-white px-3 pb-4 text-center position-relative h-100 d-flex flex-column" style="border-radius: 0; margin-top: 40px;">
                     <div class="service-icon-wrap position-absolute start-50 translate-middle" style="top: 0;">
                         <div class="service-icon bg-orange rounded-circle d-flex align-items-center justify-content-center border border-8 border-white" style="width: 95px; height: 95px; background-color: #d97539;">
                             <img src="<?php echo esc_url($image_pc['url']); ?>" alt="<?php echo esc_attr($image_pc['alt']); ?>" style="max-width: 45px; max-height: 45px; filter: brightness(0) invert(1);">
                         </div>
                     </div>
-                    <div class="pt-5 mt-4 flex-grow-1">
+                    <div class="pt-5 mt-4 flex-grow-1 ptm-4">
                         <h5 class="text-uppercase fw-bold text-blue mb-3" style="color: #3e6896; font-size: 16px; min-height: 40px;"><?php echo esc_html($title); ?></h5>
-                        <p class="text-dark small mb-4" style="font-size: 13px; line-height: 1.6;"><?php echo esc_html($desc); ?></p>
+                        <p class="text-dark small mb-4 mmb-0" style="font-size: 13px; line-height: 1.6;"><?php echo esc_html($desc); ?></p>
                     </div>
                     <div class="mt-auto pb-2">
                         <?php if($link): ?>
@@ -222,7 +222,7 @@ $sec5_image = get_field('sec5_image');
                     ?>
                 </div>
                 
-                <div class="mb-5 d-flex justify-content-center">
+                <div class="mb-5 d-flex justify-content-center mmt-2">
                     <div class="position-relative text-white px-4" style="max-width: 85%;">
                         <span class="position-absolute start-0" style="top: -15px; font-size: 60px; color: #fff; line-height: 1; font-family: Georgia, serif;">&ldquo;</span>
                         <p class="mb-0 fw-medium text-center" style="font-size: clamp(18px, 2vw, 24px);"><?php echo get_field('slogan'); ?></p>
@@ -265,7 +265,7 @@ $sec5_image = get_field('sec5_image');
                     <a href="<?php the_permalink(); ?>" class="d-block mb-3">
                         <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'large'); ?>" class="w-100 obj-fit-cover" style="height: 480px;" alt="<?php the_title(); ?>">
                     </a>
-                    <h6 class="text-uppercase fw-bold text-blue mb-1" style="color: #3e6896; font-size: 15px;">
+                    <h6 class="text-uppercase fw-bold text-blue mb-1 mmt-1" style="color: #3e6896; font-size: 15px;">
                         <a href="<?php the_permalink(); ?>" class="text-decoration-none" style="color: inherit;"><?php the_title(); ?></a>
                     </h6>
                     <?php 
@@ -309,7 +309,7 @@ $sec5_image = get_field('sec5_image');
                     <div class="p-4 flex-grow-1">
                         <h5 class="fw-bold mb-3" style="font-size: 18px;"><a href="<?php echo get_permalink($main_news->ID); ?>" class="text-decoration-none text-dark"><?php echo get_the_title($main_news->ID); ?></a></h5>
                         <p class="text-dark mb-3 fs-14" style="line-height: 1.6;"><?php echo wp_trim_words(get_the_excerpt($main_news->ID), 30); ?></p>
-                        <div>
+                        <div class="mmt-1">
                             <a href="<?php echo get_permalink($main_news->ID); ?>" class="btn text-white px-4 py-2 rounded-0 fw-medium" style="background-color: #3e6896; font-size: 13px;">ĐỌC THÊM</a>
                         </div>
                     </div>
