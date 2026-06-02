@@ -1,64 +1,51 @@
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/ProximaNova-Semibold.eot');
-    src: url('../fonts/ProximaNova-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ProximaNova-Semibold.woff2') format('woff2'),
-        url('../fonts/ProximaNova-Semibold.woff') format('woff'),
-        url('../fonts/ProximaNova-Semibold.ttf') format('truetype'),
-        url('../fonts/ProximaNova-Semibold.svg#ProximaNova-Semibold') format('svg');
+    font-family: 'SVN-Gilroy';
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.eot');
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.woff2') format('woff2'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.woff') format('woff'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.ttf') format('truetype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.svg#SVN-Gilroy/SVN-Gilroy Medium') format('svg');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/ProximaNova-Regular.eot');
-    src: url('../fonts/ProximaNova-Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ProximaNova-Regular.woff2') format('woff2'),
-        url('../fonts/ProximaNova-Regular.woff') format('woff'),
-        url('../fonts/ProximaNova-Regular.ttf') format('truetype'),
-        url('../fonts/ProximaNova-Regular.svg#ProximaNova-Regular') format('svg');
+    font-family: 'SVN-Gilroy';
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.eot');
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.woff2') format('woff2'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.woff') format('woff'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.ttf') format('truetype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.svg#SVN-Gilroy/SVN-Gilroy Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/ProximaNova-Bold.eot');
-    src: url('../fonts/ProximaNova-Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ProximaNova-Bold.woff2') format('woff2'),
-        url('../fonts/ProximaNova-Bold.woff') format('woff'),
-        url('../fonts/ProximaNova-Bold.ttf') format('truetype'),
-        url('../fonts/ProximaNova-Bold.svg#ProximaNova-Bold') format('svg');
+    font-family: 'SVN-Gilroy';
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
-    font-family: 'Proxima Nova';
-    src: url('../fonts/ProximaNova-Medium.eot');
-    src: url('../fonts/ProximaNova-Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/ProximaNova-Medium.woff2') format('woff2'),
-        url('../fonts/ProximaNova-Medium.woff') format('woff'),
-        url('../fonts/ProximaNova-Medium.ttf') format('truetype'),
-        url('../fonts/ProximaNova-Medium.svg#ProximaNova-Medium') format('svg');
+    font-family: 'SVN-Gilroy';
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
+    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
+        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
     font-weight: 500;
-    font-style: normal;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Oswald';
-    src: url('../fonts/Oswald.eot');
-    src: url('../fonts/Oswald.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/Oswald.woff2') format('woff2'),
-        url('../fonts/Oswald.woff') format('woff'),
-        url('../fonts/Oswald.ttf') format('truetype'),
-        url('../fonts/Oswald.svg#ProximaNova-Medium') format('svg');
-    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
@@ -68,7 +55,7 @@ html {
 }
 
 body {
-    font-family: 'Proxima Nova', sans-serif;
+    font-family: 'SVN-Gilroy', sans-serif;
     color: #111827;
     overflow-x: hidden;
 }
@@ -968,7 +955,7 @@ p.card-text {
 }
 
 .f-big {
-    font-family: Oswald;
+    font-family: 'SVN-Gilroy';
     font-weight: 400;
     font-size: 38px;
     line-height: 24px;
@@ -1758,7 +1745,7 @@ p.post-date {
 }
 
 .info-lastest h3.post-title {
-    font-family: Proxima Nova;
+    font-family: SVN-Gilroy;
     font-weight: 600;
     font-size: 16px;
     line-height: 22px;
@@ -1873,7 +1860,7 @@ h2.wp-block-heading {
     position: absolute;
     top: 72%;
     left: -9%;
-    font-family: Proxima Nova;
+    font-family: SVN-Gilroy;
     font-weight: 400;
     font-size: 200px;
     height: 0;
@@ -1886,7 +1873,7 @@ h2.wp-block-heading {
     position: absolute;
     top: 2%;
     right: -9%;
-    font-family: Proxima Nova;
+    font-family: SVN-Gilroy;
     font-weight: 400;
     font-size: 200px;
     height: 0;
@@ -2689,7 +2676,7 @@ button.read-more {
 }
 
 .footer-col-menu .c-footer-list ul li a:hover {
-    color: #d97539;
+    color: #F96305;
 }
 
 .footer-col-menu .box-social {
@@ -2989,12 +2976,12 @@ button.read-more {
     }
 
     ul.custom-navbar-nav>li.nav-item>a.nav-link:hover {
-        color: #d97539 !important;
+        color: #F96305 !important;
         transform: none !important;
     }
 
     ul.custom-navbar-nav>li.nav-item.active>a.nav-link {
-        background-color: #d97539 !important;
+        background-color: #F96305 !important;
         color: #fff !important;
     }
 }
@@ -4204,7 +4191,7 @@ button.read-more {
         margin-bottom: 1.5rem !important;
     }
     .page-template-layout-about #section-5 .position-absolute {
-        background: #d97539 !important;
+        background: #F96305 !important;
         width: 15px !important;
     }
     .page-template-layout-about #section-5 .g-4 {
@@ -4256,7 +4243,7 @@ button.read-more {
 
 .section-1 h3 {
     font-weight: 700;
-    font-size: 25px;
+    font-size: 32px;
     line-height: 130%;
     letter-spacing: 0%;
     color: #fff;
@@ -4280,12 +4267,12 @@ button.read-more {
 
 .section-1 .flickity-page-dots .dot.is-selected {
     opacity: 1;
-    background: #d97539;
+    background: #F96305;
 }
 
 /* Home General */
 .text-orange {
-    color: #d97539 !important;
+    color: #F96305 !important;
 }
 
 .text-blue {
@@ -4459,7 +4446,7 @@ button.read-more {
 }
 
 .play-btn:hover svg path {
-    fill: #d97539;
+    fill: #F96305;
 }
 
 /* Custom Pagination */
@@ -4511,7 +4498,7 @@ button.read-more {
 }
 
 .service-card:hover h4 a {
-    color: #d97539 !important;
+    color: #F96305 !important;
 }
 
 /* Process timeline - Section 2 */
@@ -4553,7 +4540,7 @@ button.read-more {
 }
 
 #back-to-top:hover {
-    background: #d97539;
+    background: #F96305;
     box-shadow: 0 6px 20px rgba(217, 117, 57, 0.4);
     transform: translateY(-3px);
 }
@@ -4618,7 +4605,7 @@ button.read-more {
     top: 15%;
     height: 70%;
     width: 4px;
-    background: #d97539;
+    background: #F96305;
     border-radius: 0 4px 4px 0;
 }
 
@@ -4635,7 +4622,7 @@ button.read-more {
 .solution-post-card .post-label {
     font-size: 13px;
     font-weight: 700;
-    color: #d97539;
+    color: #F96305;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.6rem;
@@ -4656,7 +4643,7 @@ button.read-more {
 }
 
 .solution-post-card h3 a:hover {
-    color: #d97539;
+    color: #F96305;
 }
 
 .solution-post-card .excerpt {
@@ -4681,7 +4668,7 @@ button.read-more {
 }
 
 .solution-post-card .read-more:hover {
-    color: #d97539;
+    color: #F96305;
     gap: 12px;
 }
 
@@ -4714,7 +4701,7 @@ button.read-more {
 }
 
 .why-choose-icon-box:hover .icon-circle {
-    background: #d97539;
+    background: #F96305;
 }
 
 .why-choose-icon-box .icon-circle img {
@@ -4908,7 +4895,7 @@ button.read-more {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: #d97539;
+    background-color: #F96305;
     border: none;
     padding: 12px 28px;
     border-radius: 0;
@@ -4924,7 +4911,7 @@ button.read-more {
 
 .single-hero-badge {
     display: inline-block;
-    background: #d97539;
+    background: #F96305;
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -4997,7 +4984,7 @@ button.read-more {
 .single-title-divider {
     width: 60px;
     height: 4px;
-    background: #d97539;
+    background: #F96305;
     border-radius: 2px;
 }
 
@@ -5042,7 +5029,7 @@ button.read-more {
 }
 
 .single-post-body blockquote {
-    border-left: 4px solid #d97539;
+    border-left: 4px solid #F96305;
     padding: 1rem 1.5rem;
     background: #fef7f2;
     margin: 1.5rem 0;
@@ -5117,7 +5104,7 @@ button.read-more {
 .sidebar-accent-bar {
     width: 5px;
     height: 22px;
-    background: #d97539;
+    background: #F96305;
     border-radius: 3px;
     flex-shrink: 0;
 }
@@ -5189,7 +5176,7 @@ button.read-more {
 }
 
 .related-title a:hover {
-    color: #d97539;
+    color: #F96305;
 }
 
 /* ==========================================================================
@@ -5290,6 +5277,9 @@ button.read-more {
     .related-title {
         font-size: 13px;
     }
+    .section-1 h3 {
+        font-size: 16px;
+    }
 }
 
 /* ==========================================================================
@@ -5374,7 +5364,7 @@ button.read-more {
 
 .proj-thumb-cell.is-nav-selected,
 .proj-thumb-cell:hover {
-    border-color: #d97539;
+    border-color: #F96305;
     opacity: 1;
 }
 
@@ -5393,7 +5383,7 @@ button.read-more {
 
 .proj-cat-badge {
     display: inline-block;
-    background: #d97539;
+    background: #F96305;
     color: #fff;
     font-size: 11px;
     font-weight: 700;
@@ -5435,7 +5425,7 @@ button.read-more {
 
 .proj-meta-item svg {
     flex-shrink: 0;
-    stroke: #d97539;
+    stroke: #F96305;
 }
 
 /* --- Content Section --- */
@@ -5513,7 +5503,7 @@ button.read-more {
 .proj-divider-bar {
     width: 5px;
     height: 22px;
-    background: #d97539;
+    background: #F96305;
     border-radius: 3px;
     flex-shrink: 0;
 }
@@ -5572,7 +5562,7 @@ button.read-more {
 .proj-section-bar {
     width: 5px;
     height: 24px;
-    background: #d97539;
+    background: #F96305;
     border-radius: 3px;
     flex-shrink: 0;
 }
@@ -5591,7 +5581,7 @@ button.read-more {
 }
 
 .proj-related-carousel .flickity-button:hover {
-    background: #d97539;
+    background: #F96305;
 }
 
 .proj-related-carousel .flickity-button:hover svg path {
@@ -5649,7 +5639,7 @@ button.read-more {
 
 .proj-related-view-btn {
     display: inline-block;
-    background: #d97539;
+    background: #F96305;
     color: #fff;
     font-size: 13px;
     font-weight: 700;
@@ -5675,7 +5665,7 @@ button.read-more {
 }
 
 .proj-related-card:hover .proj-related-title {
-    color: #d97539;
+    color: #F96305;
 }
 
 .proj-related-addr {
@@ -5688,7 +5678,7 @@ button.read-more {
 }
 
 .proj-related-addr svg {
-    stroke: #d97539;
+    stroke: #F96305;
     flex-shrink: 0;
 }
 
@@ -5845,7 +5835,7 @@ button.read-more {
 }
 
 .project-page-card:hover .project-page-title {
-    color: #d97539;
+    color: #F96305;
 }
 
 .project-page-meta {
@@ -5995,7 +5985,7 @@ button.read-more {
 }
 
 .contact-hotline-btn:hover {
-    background: #d97539;
+    background: #F96305;
     color: #fff;
 }
 
@@ -6082,7 +6072,7 @@ button.read-more {
 }
 
 .contact-cf7-wrap .wpcf7-submit:hover {
-    background: #d97539;
+    background: #F96305;
 }
 
 /* Cam kết text (if added via CF7, style appropriately. Otherwise handled by center alignment) */
@@ -6214,7 +6204,7 @@ button.read-more {
 
 .form-contact-page .wpcf7-submit:hover,
 .form-contact-page .submit-form:hover {
-    background: #d97539;
+    background: #F96305;
 }
 
 /* Map Section */
@@ -6265,7 +6255,7 @@ h2.title-with-line::after {
     left: 0;
     width: 145px;
     height: 3px;
-    background-color: #d97539;
+    background-color: #F96305;
 }
 
 @media (max-width: 767px) {

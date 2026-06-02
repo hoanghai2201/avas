@@ -28,7 +28,7 @@ global $domain;
                 <div class="position-absolute top-0 start-0 w-100 h-100" style="background: linear-gradient(90deg, rgba(16,42,80,0.8) 0%, rgba(16,42,80,0.4) 50%, rgba(0,0,0,0) 100%);"></div>
                 <div class="slider-content position-absolute top-50 translate-middle-y text-white px-3 px-md-5" style="left: 0; max-width: 620px;">
                     <div class="ps-md-5 ms-md-4">
-                        <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 45px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
+                        <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 60px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
                         <div class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo wp_kses_post($desc); ?></div>
                         <?php if($link): ?>
                         <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #d97539; border: none; font-size: 16px;">
