@@ -225,7 +225,7 @@ $sec5_image = get_field('sec5_image');
                 <div class="mb-5 d-flex justify-content-center mmt-2">
                     <div class="position-relative text-white px-4" style="max-width: 85%;">
                         <span class="position-absolute start-0" style="top: -15px; font-size: 60px; color: #fff; line-height: 1; font-family: Georgia, serif;">&ldquo;</span>
-                        <p class="mb-0 fw-medium text-center" style="font-size: clamp(18px, 2vw, 24px);"><?php echo get_field('slogan'); ?></p>
+                        <p class="mb-0 fw-medium text-center font-bd" style="font-size: clamp(18px, 2vw, 24px);"><?php echo get_field('slogan'); ?></p>
                         <span class="position-absolute end-0" style="bottom: -35px; font-size: 60px; color: #fff; line-height: 1; font-family: Georgia, serif;">&rdquo;</span>
                     </div>
                 </div>

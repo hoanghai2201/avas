@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.eot');
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.woff2') format('woff2'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.woff') format('woff'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.ttf') format('truetype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Medium.svg#SVN-Gilroy/SVN-Gilroy Medium') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.svg#SVN-Gilroy/SVN-Gilroy Medium') format('svg');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -13,12 +13,12 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.eot');
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.woff2') format('woff2'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.woff') format('woff'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.ttf') format('truetype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Regular.svg#SVN-Gilroy/SVN-Gilroy Regular') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.svg#SVN-Gilroy/SVN-Gilroy Regular') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,12 +26,12 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -39,13 +39,26 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
-    src: url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
-        url('../fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
     font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'UVNBachDangNangItalic';
+    src: url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/UVNBachDangNangItalic.svg#UVNBachDangNangItalic/UVNBachDangNangItalic') format('svg');
+    font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
@@ -146,6 +159,10 @@ span.display-name {
     /*    backdrop-filter: saturate(180%) blur(8px);*/
     /*    background: rgb(255 255 255 / 80%) !important;*/
     box-shadow: rgba(0, 0, 0, 0.1) 0px 5px 15px;
+}
+
+.font-bd {
+    font-family: 'UVNBachDangNangItalic', serif;
 }
 
 .justify-center {
@@ -5877,17 +5894,17 @@ button.read-more {
 }
 
 .testimonial-avatar-img {
-    width: 140px;
-    height: 140px;
+    width: 90%;
+    height: 90%;
     border: 8px solid #eef2f8;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    /* box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); */
     background-color: #eef2f8;
     transition: border-color 0.4s ease;
 }
 
 .testimonial-avatar-cell.is-selected .testimonial-avatar-img {
     border-color: #fff;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); */
 }
 
 /* Flickity Buttons for avatar carousel */

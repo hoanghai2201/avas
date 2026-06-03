@@ -47,7 +47,8 @@ global $domain;
 </section>
 
 <!-- Section 2: Company Info -->
-<section id="section-2" class="" style="background-color: #fff;">
+ <?php $sec2_bg = get_field('sec2_bg'); ?>
+<section id="section-2" class="" style="background: url('<?php echo esc_url($sec2_bg['url']); ?>') no-repeat center center;background-size: 100% 100%;">
     <div class="container py-4 py-md-5">
         <div class="row align-items-center box-s2">
             <!-- Tỉ lệ 50-50 theo yêu cầu -->
@@ -85,7 +86,7 @@ global $domain;
 
 <!-- Section 3: Vision, Mission & Stats -->
 <!-- Khối trên màu xám chứa một nửa video -->
-<section id="section-3" class="position-relative pt-5" style="background-color: #fff;">
+<section id="section-3" class="position-relative pt-0" style="background-color: #fff;">
     <!-- Box Video thu nhỏ (khoảng 80%) và nằm đè lên biên giới 2 khối màu -->
     <div class="container position-relative" style="z-index: 2;">
         <div class="mx-auto shadow-lg bg-dark position-relative" style="max-width: 900px; aspect-ratio: 16/9; overflow: hidden;">

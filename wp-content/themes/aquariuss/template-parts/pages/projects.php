@@ -165,29 +165,34 @@ $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
         <?php if(!empty($testimonials)): ?>
         <div class="testimonial-wrapper position-relative mx-auto text-center" style="max-width: 900px;">
             
-            <!-- Top Left Quote -->
-            <div class="position-absolute" style="top: -20px; left: 0; color: #222;">
-                <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
-            </div>
-
-            <!-- Text Carousel -->
-            <div class="testimonial-text-carousel js-flickity px-4 px-md-5" data-flickity='{ "wrapAround": true, "pageDots": false, "prevNextButtons": false, "draggable": false, "fade": true }'>
-                <?php foreach($testimonials as $index => $t) : ?>
-                <div class="w-100 testimonial-text-slide">
-                    <p class="testimonial-text mb-0" style="font-size: 18px; line-height: 1.6; color: #111;">
-                        <?php echo nl2br(esc_html($t['desc'])); ?>
-                    </p>
+            <!-- Text & Quotes Wrapper -->
+            <div class="position-relative mx-auto px-4 px-md-5">
+                
+                <!-- Top Left Quote -->
+                <div class="position-absolute" style="top: -20px; left: 0; color: #222; z-index: 1;">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
                 </div>
-                <?php endforeach; ?>
-            </div>
 
-            <!-- Bottom Right Quote -->
-            <div class="position-absolute testimonial-end" style="bottom: 200px; right: 0; color: #222;">
-                <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+                <!-- Text Carousel -->
+                <div class="testimonial-text-carousel js-flickity" data-flickity='{ "asNavFor": ".testimonial-avatar-carousel", "wrapAround": true, "pageDots": false, "prevNextButtons": false, "draggable": false, "fade": true }'>
+                    <?php foreach($testimonials as $index => $t) : ?>
+                    <div class="w-100 testimonial-text-slide">
+                        <p class="testimonial-text mb-0 px-3" style="font-size: 18px; line-height: 1.6; color: #111;">
+                            <?php echo nl2br(esc_html($t['desc'])); ?>
+                        </p>
+                    </div>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- Bottom Right Quote -->
+                <div class="position-absolute" style="bottom: -10px; right: 0; color: #222; z-index: 1;">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="currentColor"><path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z"/></svg>
+                </div>
+                
             </div>
 
             <!-- Avatar Carousel -->
-            <div class="testimonial-avatar-carousel js-flickity mx-auto mt-5" style="max-width: 500px;" data-flickity='{ "asNavFor": ".testimonial-text-carousel", "wrapAround": true, "pageDots": false, "prevNextButtons": true, "cellAlign": "center" }'>
+            <div class="testimonial-avatar-carousel js-flickity mx-auto mt-5" style="max-width: 85%;" data-flickity='{ "wrapAround": true, "pageDots": false, "prevNextButtons": true, "cellAlign": "center" }'>
                 <?php foreach($testimonials as $t) : ?>
                 <div class="testimonial-avatar-cell">
                     <?php if($t['image']): ?>
