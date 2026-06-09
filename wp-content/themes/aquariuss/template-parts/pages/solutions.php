@@ -33,7 +33,7 @@ global $domain;
                     <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 60px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
                     <p class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo wp_kses_post($desc); ?></p>
                     <?php if($link): ?>
-                    <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #d97539; border: none; font-size: 16px;">
+                    <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #F96305; border: none; font-size: 16px;">
                         Hotline <?php echo get_option('site_phone_number'); ?>
                     </a>
                     <?php endif; ?>
@@ -111,7 +111,7 @@ global $domain;
 <!-- Section 3: Tại sao nên lựa chọn AVAS? -->
 <section id="section-3" class="why-choose-wrap">
     <!-- Orange Title Banner -->
-    <div class="w-100 py-4 text-center" style="background-color: #d97539;">
+    <div class="w-100 py-4 text-center" style="background-color: #F96305;">
         <h2 class="mb-0 text-uppercase fw-bold text-white" style="font-size: clamp(20px, 3vw, 30px); letter-spacing: 1px;" data-aos="fade-up">
             <?php echo get_field('title_sec3') ? get_field('title_sec3') : 'TẠI SAO NÊN LỰA CHỌN AVAS?'; ?>
         </h2>

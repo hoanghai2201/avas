@@ -32,7 +32,7 @@ global $domain;
                         <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 60px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
                         <p class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo wp_kses_post($desc); ?></p>
                         <?php if($link): ?>
-                        <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #d97539; border: none; font-size: 16px;">
+                        <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #F96305; border: none; font-size: 16px;">
                             Hotline <?php echo get_option('site_phone_number'); ?>
                         </a>
                         <?php endif; ?>
@@ -63,7 +63,7 @@ global $domain;
                 <h2 class="text-uppercase fw-bold text-blue mb-1" style="color: #3e6896; font-size: 32px; letter-spacing: 0.5px;" data-aos="fade-up">
                     <?php echo get_field('sec2_title1'); ?>
                 </h2>
-                <h2 class="text-uppercase fw-bold mb-4" style="color: #d97539; font-size: 32px; letter-spacing: 0.5px;" data-aos="fade-up" data-aos-delay="100">
+                <h2 class="text-uppercase fw-bold mb-4" style="color: #F96305; font-size: 32px; letter-spacing: 0.5px;" data-aos="fade-up" data-aos-delay="100">
                     <?php echo get_field('sec2_title2'); ?>
                 </h2>
                 <div class="text-dark mb-4 sec2-desc" style="line-height: 1.6; font-size: 14px; text-align: justify;" data-aos="fade-up" data-aos-delay="200">
@@ -128,10 +128,10 @@ global $domain;
                 <!-- Tầm nhìn (Vision) -->
                 <div class="col-lg-4 mb-4 mb-lg-0">
                     <!-- Sửa lại: Có viền cam ở DƯỚI ĐÁY -->
-                    <div class="bg-white p-4 h-100 shadow-sm position-relative d-flex flex-column justify-content-center" style="border-bottom: 6px solid #d97539;">
+                    <div class="bg-white p-4 h-100 shadow-sm position-relative d-flex flex-column justify-content-center" style="border-bottom: 6px solid #F96305;">
                         <?php $sec3_icon1 = get_field('sec3_icon1'); if($sec3_icon1): ?>
                             <!-- Icon lơ lửng góc trên trái -->
-                            <div class="position-absolute d-flex align-items-center justify-content-center w-60" style="top: -25px; left: 20px; background: #d97539; width: 60px; height: 60px;">
+                            <div class="position-absolute d-flex align-items-center justify-content-center w-60" style="top: -25px; left: 20px; background: #F96305; width: 60px; height: 60px;">
                                 <img src="<?php echo esc_url($sec3_icon1['url']); ?>" alt="Tầm nhìn" style="max-width: 32px; filter: brightness(0) invert(1);">
                             </div>
                         <?php endif; ?>
@@ -166,9 +166,9 @@ global $domain;
 
                 <!-- Sứ mệnh (Mission) -->
                 <div class="col-lg-4">
-                    <div class="bg-white p-4 h-100 shadow-sm position-relative d-flex flex-column justify-content-center" style="border-bottom: 6px solid #d97539;">
+                    <div class="bg-white p-4 h-100 shadow-sm position-relative d-flex flex-column justify-content-center" style="border-bottom: 6px solid #F96305;">
                         <?php $sec3_icon2 = get_field('sec3_icon2'); if($sec3_icon2): ?>
-                            <div class="position-absolute d-flex align-items-center justify-content-center w-60" style="top: -25px; left: 20px; background: #d97539; width: 60px; height: 60px;">
+                            <div class="position-absolute d-flex align-items-center justify-content-center w-60" style="top: -25px; left: 20px; background: #F96305; width: 60px; height: 60px;">
                                 <img src="<?php echo esc_url($sec3_icon2['url']); ?>" alt="Sứ mệnh" style="max-width: 32px; filter: brightness(0) invert(1);">
                             </div>
                         <?php endif; ?>
@@ -283,7 +283,7 @@ function playSec3Video() {
                     <div class="col-lg-6 col-md-6 mmb-3">
                         <div class="card-body p-4 p-lg-5 position-relative h-100 d-flex flex-column justify-content-center bg-white wm-100">
                             <!-- Đường kẻ cam ở lề trái của text -->
-                            <div class="position-absolute h-70" style="width: 15px; background: #d97539; left: -1px; top: 15%; border-radius: 0 20px 20px 0;"></div>
+                            <div class="position-absolute h-70" style="width: 15px; background: #F96305; left: -1px; top: 15%; border-radius: 0 20px 20px 0;"></div>
                             <h4 class="card-title fw-bold text-blue mb-4 ms-3" style="color: #3e6896; font-size: 22px;"><?php echo esc_html($title); ?></h4>
                             <div class="card-text text-dark ms-3" style="line-height: 1.8; font-size: 15px;">
                                 <?php echo wpautop($desc); ?>

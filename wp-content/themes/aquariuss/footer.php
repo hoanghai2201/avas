@@ -53,7 +53,7 @@ global $domain;
     transform: translateY(0);
 }
 #back-to-top:hover {
-    background: #d97539;
+    background: #F96305;
     box-shadow: 0 6px 20px rgba(217, 117, 57, 0.4);
     transform: translateY(-3px);
 }

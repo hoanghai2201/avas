@@ -33,7 +33,7 @@ global $domain;
                         <h1 class="fw-bold text-uppercase mb-2" style="font-size: clamp(32px, 5vw, 60px); line-height: 1.2;"><?php echo nl2br(esc_html($title)); ?></h1>
                         <p class="mb-4 text-light" style="font-size: clamp(16px, 2vw, 20px);"><?php echo wp_kses_post($desc); ?></p>
                         <?php if($link): ?>
-                        <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #d97539; border: none; font-size: 16px;">
+                        <a href="<?php echo $link; ?>" class="btn text-white fw-bold px-4 py-3 text-uppercase rounded-0" style="background-color: #F96305; border: none; font-size: 16px;">
                             Hotline <?php echo get_option('site_phone_number'); ?>
                         </a>
                         <?php endif; ?>
@@ -186,7 +186,7 @@ global $domain;
                 <div class="service-card h-100 bg-white rounded-0 shadow-sm border-0 position-relative d-flex flex-column transition-all">
                     <div class="p-4 p-md-5 d-flex flex-column flex-grow-1">
                         <h4 class="fw-bold mb-3 d-flex align-items-center text-uppercase" style="font-size: 18px; color: #3e6896;">
-                            <span style="color: #d97539; margin-right: 12px; font-size: 20px;"><?php echo $num; ?>.</span> 
+                            <span style="color: #F96305; margin-right: 12px; font-size: 20px;"><?php echo $num; ?>.</span> 
                             <a href="<?php the_permalink(); ?>" class="text-decoration-none" style="color: inherit; transition: color 0.3s;"><?php the_title(); ?></a>
                         </h4>
                         <div class="text-dark small mb-4 flex-grow-1" style="font-size: 14px; line-height: 1.6; text-align: justify;">
