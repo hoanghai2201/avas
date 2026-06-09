@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.eot');
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.eot?#iefix') format('embedded-opentype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.woff2') format('woff2'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.woff') format('woff'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.ttf') format('truetype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Medium.svg#SVN-Gilroy/SVN-Gilroy Medium') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyMedium.svg#SVN-Gilroy/SVN-GilroyMedium') format('svg');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -13,12 +13,12 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.eot');
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.eot?#iefix') format('embedded-opentype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.woff2') format('woff2'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.woff') format('woff'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.ttf') format('truetype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Regular.svg#SVN-Gilroy/SVN-Gilroy Regular') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy.svg#SVN-Gilroy/SVN-Gilroy') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -26,12 +26,12 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.svg#SVN-Gilroy/SVN-GilroyBold') format('svg');
     font-weight: bold;
     font-style: normal;
     font-display: swap;
@@ -39,12 +39,12 @@
 
 @font-face {
     font-family: 'SVN-Gilroy';
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot');
-    src: url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.eot?#iefix') format('embedded-opentype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff2') format('woff2'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.woff') format('woff'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.ttf') format('truetype'),
-        url('/wp-content/fonts/SVN-Gilroy/SVN-Gilroy Bold.svg#SVN-Gilroy/SVN-Gilroy Bold') format('svg');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.eot');
+    src: url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.eot?#iefix') format('embedded-opentype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.woff2') format('woff2'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.woff') format('woff'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.ttf') format('truetype'),
+        url('/wp-content/fonts/SVN-Gilroy/SVN-GilroyBold.svg#SVN-Gilroy/SVN-GilroyBold') format('svg');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

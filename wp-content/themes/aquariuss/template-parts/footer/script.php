@@ -31,16 +31,6 @@ global $domain;
     AOS.init({
         once: true,
     });
-    document.getElementById("search-btn").addEventListener("click", function(event) {
-        event.stopPropagation();
-        let offcanvasMenu = document.getElementById('offcanvasMenu'); 
-        if (offcanvasMenu.classList.contains('show')) {
-            $('#navbar-toggler').click();
-        }
-        $('#search-btn').hide();
-        $('#box-search').addClass('search-close');
-        $('.search-box').addClass('search-box-active');
-    });
 
     $(function() {
         let full_width = $('body').width();
